@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBVIBES.ID - Jasa Pembuatan Website Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+<body>
+    <!-- Hidden Music Controls (Only for admin/developer) -->
+    <div class="hidden-music-controls" id="hidden-music-controls">
+        <button id="toggle-hidden-music">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Music Welcome Modal -->
+    <div class="music-welcome-modal" id="music-welcome-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="modal-logo">
+            </div>
+            <h2>Selamat Datang di WEBVIBES.ID</h2>
+            <div class="modal-buttons">
+                <button id="close-welcome-modal" class="modal-btn">Lanjutkan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation Elements -->
+    <div class="floating-elements">
+        <div class="floating-circle floating-circle-1"></div>
+        <div class="floating-circle floating-circle-2"></div>
+        <div class="floating-circle floating-circle-3"></div>
+        <div class="floating-triangle floating-triangle-1"></div>
+        <div class="floating-triangle floating-triangle-2"></div>
+        <div class="floating-square floating-square-1"></div>
+        <div class="floating-square floating-square-2"></div>
+    </div>
+    
+    <!-- Pulsing CTA Button -->
+    <div class="pulsing-cta" id="pulsing-cta">
+        <i class="fas fa-comments"></i>
+        <div class="cta-tooltip">Konsultasi Gratis!</div>
+    </div>
+    
+    <!-- Animated Particles Background -->
+    <div class="particles-container" id="particles-container"></div>
+
+    <!-- Whatsapp Chat Bubble -->
+    <a href="https://wa.me/6287824815854" class="whatsapp-bubble" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="chat-text">Konsultasi Gratis</span>
+    </a>
+
+    <!-- Header dan Navigasi -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="footer-logo-img">
+                    <div class="logo-text-container">
+                        <h1 class="logo-main">
+                            <span class="logo-web">WEB</span>
+                            <span class="logo-vibes">VIBES</span>
+                            <span class="logo-id">.ID</span>
+                        </h1>
+                        <p class="tagline"><strong>TECHNOLOGY INDONESIA</strong></p>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#meaning">Makna</a></li>
+                <li><a href="#vision-mission">Visi & Misi</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><a href="#" class="btn-nav" id="open-consultation-modal">Orde Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Transformasi Digital untuk <span class="highlight typing-text">Bisnis Anda</span></h2>
+            <p class="hero-subtitle">WEBVIBES.ID menciptakan website yang tidak hanya indah, tetapi juga fungsional, responsif, dan mendukung pertumbuhan bisnis Anda.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary wave-btn">Mulai Proyek Anda</a>
+                <a href="#meaning" class="btn-secondary wave-btn">Kenali Makna Kami</a>
+            </div>
+            <div class="music-indicator">
+                <i class="fas fa-volume-up"></i>
+                <span>pengalaman terbaik dengan musik inspiratif</span>
+            </div>
+            <div class="scroll-indicator"></div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Makna WEBVIBES.ID Section -->
+    <section id="meaning" class="meaning-section">
+        <div class="section-header">
+            <h2>Makna WEBVIBES.ID</h2>
+            <p>Getaran Digital Indonesia yang Berkarakter</p>
+        </div>
+        
+        <div class="meaning-container">
+            <div class="meaning-content">
+                <div class="meaning-breakdown">
+                    <div class="meaning-item">
+                        <div class="meaning-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="meaning-text">
+                            <h3>WEB</h3>
+                            <p>Representasi digital dari identitas bisnis Anda. Platform online yang tidak hanya berfungsi, tetapi juga memiliki jiwa dan karakter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="meaning-item">
+                        <div class="meaning-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="meaning-text">
+                            <h3>VIBES</h3>
+                            <p>Getaran positif, energi, dan suasana yang dipancarkan. Website dengan kepribadian unik yang menciptakan kesan mendalam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="meaning-item">
+                        <div class="meaning-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="meaning-text">
+                            <h3 class="id-red-white">.ID</h3>
+                            <p>Identitas Indonesia. Bangga dengan produk lokal, memahami pasar Indonesia, dan berkontribusi untuk kemajuan digital tanah air.</p>
+                            <p class="indonesia-symbol"><i class="fas fa-star"></i> Merah-Putih kebanggaan bangsa <i class="fas fa-star"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="philosophy">
+                    <h3>Filosofi Kami</h3>
+                    <p>WEBVIBES.ID percaya bahwa setiap website harus memiliki "jiwa" - kombinasi harmonis antara teknologi canggih dan keindahan artistik. Kami tidak hanya membuat website, tetapi menciptakan <strong>pengalaman digital yang berkesan</strong> dengan sentuhan Indonesia.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <i class="fas fa-fingerprint"></i>
+                            <h4>Authenticity</h4>
+                            <p>Keaslian dan keunikan dalam setiap proyek</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Vibrant</h4>
+                            <p>Dinamis, hidup, dan penuh semangat</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Connection</h4>
+                            <p>Membangun hubungan melalui platform digital</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Growth</h4>
+                            <p>Mendukung pertumbuhan bisnis klien</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="meaning-visual">
+                <div class="logo-animation">
+                    <div class="animated-logo">
+                        <div class="logo-circle web-circle">
+                            <span>WEB</span>
+                        </div>
+                        <div class="logo-circle vibes-circle">
+                            <span>VIBES</span>
+                        </div>
+                        <div class="logo-circle id-circle-red-white">
+                            <span>.ID</span>
+                            <div class="red-white-stripes">
+                                <div class="red-stripe"></div>
+                                <div class="white-stripe"></div>
+                            </div>
+                        </div>
+                        <div class="connection-lines"></div>
+                    </div>
+                    <p class="visual-caption">Harmoni antara Teknologi, Kreativitas, dan Identitas Indonesia</p>
+                </div>
+                
+                <div class="mission-statement">
+                    <h3><i class="fas fa-bullseye"></i> Misi Kami</h3>
+                    <p>"Menciptakan solusi digital yang tidak hanya memenuhi kebutuhan teknis, tetapi juga menyampaikan cerita, karakter, dan nilai-nilai bisnis Anda dengan getaran positif yang khas Indonesia."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section id="vision-mission" class="vision-mission-section">
+        <div class="section-header">
+            <h2>Visi & Misi WEBVIBES.ID</h2>
+            <p>Panduan dan Komitmen Kami untuk Masa Depan Digital Indonesia</p>
+        </div>
+        
+        <div class="vision-mission-container">
+            <div class="vision-section">
+                <div class="vision-header">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visi Kami</h3>
+                </div>
+                <div class="vision-content">
+                    <h4>"Menjadi Pelopor Solusi Digital Indonesia yang Membawa Getaran Positif ke Setiap Website"</h4>
+                    <p>Kami bercita-cita untuk:</p>
+                    <ul class="vision-list">
+                        <li><i class="fas fa-rocket"></i> Menjadi mitra digital terpercaya bagi UKM dan perusahaan di Indonesia</li>
+                        <li><i class="fas fa-globe-asia"></i> Membawa standar kualitas internasional dengan sentuhan lokal</li>
+                        <li><i class="fas fa-hand-sparkles"></i> Menciptakan website yang tidak hanya berfungsi, tetapi juga menginspirasi</li>
+                        <li><i class="fas fa-users"></i> Membangun komunitas digital yang saling mendukung dan berkembang bersama</li>
+                        <li><i class="fas fa-flag"></i> Mempromosikan produk dan jasa Indonesia di kancah global melalui platform digital</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mission-section">
+                <div class="mission-header">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misi Kami</h3>
+                </div>
+                <div class="mission-content">
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Inovasi Berkelanjutan</h4>
+                            <p>Terus mengembangkan teknologi dan metode terbaru untuk memberikan solusi digital terdepan</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Kepuasan Klien</h4>
+                            <p>Mendengarkan dan memahami kebutuhan klien untuk memberikan hasil yang melebihi ekspektasi</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Edukasi Digital</h4>
+                            <p>Membantu pelaku bisnis memahami dan memanfaatkan potensi digital secara optimal</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4>Kolaborasi Positif</h4>
+                            <p>Bekerja sama dengan berbagai pihak untuk menciptakan ekosistem digital yang sehat</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Pertumbuhan Berkelanjutan</h4>
+                            <p>Mendukung pertumbuhan bisnis klien dengan solusi yang scalable dan sustainable</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <div class="mission-card-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>Kualitas Terbaik</h4>
+                            <p>Menjaga standar kualitas tertinggi dalam setiap proyek yang dikerjakan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Layanan Kami</h2>
+            <p>Kami menyediakan berbagai solusi digital untuk kebutuhan bisnis Anda</p>
+        </div>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Website Perusahaan</h3>
+                <p>Website profesional yang merepresentasikan identitas dan nilai bisnis Anda dengan desain yang modern dan responsif.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>E-Commerce</h3>
+                <p>Platform toko online lengkap dengan sistem pembayaran, manajemen produk, dan dashboard admin yang user-friendly.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Website Responsif</h3>
+                <p>Website yang tampil sempurna di semua perangkat, dari desktop hingga smartphone, untuk menjangkau lebih banyak pelanggan.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>SEO Optimization</h3>
+                <p>Optimasi website untuk mesin pencari sehingga bisnis Anda lebih mudah ditemukan oleh calon pelanggan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2>Portfolio Kami</h2>
+            <p>Beberapa project yang telah kami selesaikan untuk klien</p>
+        </div>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portfolio 1">
+                <div class="portfolio-overlay">
+                    <h3>Restoran Bintang</h3>
+                    <p>Website untuk restoran fine dining dengan sistem reservasi online</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portfolio 2">
+                <div class="portfolio-overlay">
+                    <h3>FashionStore ID</h3>
+                    <p>Toko online fashion dengan katalog produk dan integrasi pembayaran</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portfolio 3">
+                <div class="portfolio-overlay">
+                    <h3>Klinik Sehat</h3>
+                    <p>Website untuk klinik kesehatan dengan sistem janji temu online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>Mengapa Memilih WEBVIBES.ID?</h2>
+            <p>Kami adalah tim kreatif yang berdedikasi untuk menciptakan solusi digital yang tidak hanya indah secara visual, tetapi juga efektif dalam mencapai tujuan bisnis Anda.</p>
+            <ul class="about-list">
+                <li><i class="fas fa-check-circle"></i> Desain yang modern dan responsif</li>
+                <li><i class="fas fa-check-circle"></i> Pengembangan dengan teknologi terkini</li>
+                <li><i class="fas fa-check-circle"></i> Dukungan dan maintenance pasca-launch</li>
+                <li><i class="fas fa-check-circle"></i> Harga yang kompetitif dan transparan</li>
+                <li><i class="fas fa-check-circle"></i> Tim yang berpengalaman dan profesional</li>
+                <li><i class="fas fa-check-circle"></i> Pendekatan dengan "getaran" yang sesuai brand Anda</li>
+                <li><i class="fas fa-check-circle"></i> Logo dengan sentuhan Merah-Putih kebanggaan Indonesia</li>
+            </ul>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About WEBVIBES.ID">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Hubungi Kami</h2>
+            <p>Mari diskusikan proyek website Anda bersama kami</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informasi Kontak</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Pisangan Lama III No.8 (patokan Isi Ulang Transqua)</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>Tidak ada</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@webvibes.id</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Jumat: 09:00 - 17:00 WIB</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>087824815854</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <h3>Kirim Pesan</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Nomor Telepon/WhatsApp" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Jenis Layanan</option>
+                        <option value="website">Website Perusahaan</option>
+                        <option value="ecommerce">E-Commerce</option>
+                        <option value="responsive">Website Responsif</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="consultation">Konsultasi Gratis</option>
+                        <option value="other">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary wave-btn">Kirim Pesan</button>
+                <p class="form-note"><i class="fas fa-info-circle"></i> Untuk Konsultasi Gratis, kami akan menghubungi Anda dalam 1x24 jam</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Logo + Tagline -->
+            <div class="footer-logo">
+                <div class="footer-logo-container">
+                    <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="footer-logo-img">
+                    <div>
+                        <h2 class="footer-logo-text">
+                            <span class="footer-web">WEB</span>
+                            <span class="footer-vibes">VIBES</span>
+                            <span class="footer-id">.ID</span>
+                        </h2>
+                        <p class="tagline"><strong>Technology Vibes for the Digital Era</strong></p>
+                    </div>
+                </div>
+
+                <p class="footer-slogan">
+                    Menciptakan website dengan jiwa, karakter, dan getaran positif khas Indonesia.
+                </p>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/6287824815854" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#meaning">Makna WEBVIBES</a></li>
+                    <li><a href="#vision-mission">Visi & Misi</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h3>Berlangganan Newsletter</h3>
+                <p>Dapatkan tips dan informasi terbaru seputar website dan digital marketing.</p>
+
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email Anda">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </div>
+
+                <div class="copyright-small">
+                    <p>&copy; <span id="current-year"></span> WEBVIBES.ID</p>
+                    <p class="indonesia-credit"><i class="fas fa-heart"></i> Bangga Produk Indonesia <i class="fas fa-heart"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>"Getaran Digital Indonesia - Menciptakan website yang tidak hanya dilihat, tetapi juga dirasakan."</p>
+        </div>
+    </footer>
+
+    <!-- Hidden Audio Element -->
+    <audio id="hidden-audio-player" preload="auto" loop>
+        <source src="audio/Two Steps From Hell - Impossible Live @ WACKEN.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
