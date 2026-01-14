@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModalBtn: document.getElementById('close-welcome-modal'),
         toggleMusicBtn: document.getElementById('toggle-hidden-music'),
         yearSpan: document.getElementById('current-year'),
-        animatedItems: document.querySelectorAll('.service-card, .portfolio-item, .about-content, .about-image, .meaning-item')
+        animatedItems: document.querySelectorAll('.service-card, .portfolio-item, .about-content, .about-image, .meaning-item, .poster-card'),
+        posterCards: document.querySelectorAll('.poster-card') // New element for poster cards
     };
 
     // 2. MOBILE NAVIGATION
@@ -53,7 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.contactForm?.addEventListener('submit', (e) => {
         e.preventDefault();
         const submitBtn = elements.contactForm.querySelector('button');
-        const name = elements.contactForm.querySelector('input[type="text"]').value;
+        const nameInput = elements.contactForm.querySelector('input[type="text"]');
+        
+        if (!nameInput) return;
+        
+        const name = nameInput.value;
         
         // Disable button feedback
         submitBtn.disabled = true;
@@ -76,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(() => {
                 isMusicPlaying = true;
                 if (elements.toggleMusicBtn) elements.toggleMusicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                elements.modal.style.display = 'none';
+                if (elements.modal) elements.modal.style.display = 'none';
             })
             .catch(() => {
                 // Autoplay blocked, show modal
-                elements.modal.style.display = 'flex';
+                if (elements.modal) elements.modal.style.display = 'flex';
             });
     };
 
@@ -92,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Admin Toggle
     elements.toggleMusicBtn?.addEventListener('click', () => {
+        if (!elements.audio) return;
+        
         if (isMusicPlaying) {
             elements.audio.pause();
             elements.toggleMusicBtn.innerHTML = '<i class="fas fa-play"></i>';
@@ -133,13 +140,152 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
             if (target) {
                 window.scrollTo({
                     top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                if (elements.navMenu && elements.navMenu.classList.contains('active')) {
+                    elements.navMenu.classList.remove('active');
+                    if (elements.hamburger) elements.hamburger.classList.remove('active');
+                }
             }
         });
     });
+
+    // 9. POSTER SECTION INTERACTIVITY
+    function initPosterSection() {
+        if (!elements.posterCards || elements.posterCards.length === 0) return;
+        
+        elements.posterCards.forEach(card => {
+            // Hover effect enhancement
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+                card.style.transition = 'transform 0.3s ease';
+                card.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+                card.style.zIndex = '1';
+            });
+            
+            // Click effect
+            card.addEventListener('click', (e) => {
+                // Check if click was on the view button
+                const viewBtn = card.querySelector('.view-poster-btn');
+                if (viewBtn && !e.target.closest('.view-poster-btn')) {
+                    const modalId = viewBtn.getAttribute('data-bs-target');
+                    const modalElement = document.querySelector(modalId);
+                    
+                    if (modalElement && typeof bootstrap !== 'undefined') {
+                        const modal = new bootstrap.Modal(modalElement);
+                        modal.show();
+                    }
+                }
+            });
+        });
+        
+        // Add keyboard navigation for poster modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.modal.show');
+                openModals.forEach(modal => {
+                    const bsModal = bootstrap.Modal.getInstance(modal);
+                    if (bsModal) {
+                        bsModal.hide();
+                    }
+                });
+            }
+        });
+    }
+
+    // 10. POSTER MODAL ENHANCEMENTS
+    function initPosterModals() {
+        const posterModals = document.querySelectorAll('.poster-modal');
+        
+        posterModals.forEach(modal => {
+            modal.addEventListener('shown.bs.modal', () => {
+                // Add animation to modal content
+                const modalContent = modal.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.style.transform = 'scale(0.9)';
+                    modalContent.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        modalContent.style.transition = 'all 0.3s ease';
+                        modalContent.style.transform = 'scale(1)';
+                        modalContent.style.opacity = '1';
+                    }, 50);
+                }
+            });
+            
+            // Close modal on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const bsModal = bootstrap.Modal.getInstance(this);
+                    if (bsModal) {
+                        bsModal.hide();
+                    }
+                }
+            });
+        });
+    }
+
+    // 11. IMAGE LAZY LOADING FOR POSTERS (Performance Optimization)
+    function initLazyLoading() {
+        const lazyImages = document.querySelectorAll('.poster-card img[data-src]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for older browsers
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        }
+    }
+
+    // 12. INITIALIZE ALL FUNCTIONS
+    initPosterSection();
+    initPosterModals();
+    initLazyLoading();
+
+    // 13. LOADING STATE HANDLER
+    window.addEventListener('load', function() {
+        // Add loaded class to body
+        document.body.classList.add('loaded');
+        
+        // Remove loading animation if exists
+        const loader = document.querySelector('.page-loader');
+        if (loader) {
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 300);
+            }, 500);
+        }
+    });
+
+    // Debug log untuk memastikan script berjalan
+    console.log('WEBVIBES.ID Script loaded successfully!');
+    console.log(`Poster cards found: ${elements.posterCards.length}`);
 });

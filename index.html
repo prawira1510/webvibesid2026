@@ -55,7 +55,7 @@
                                 <span class="logo-vibes">VIBES</span>
                                 <span class="logo-id">.ID</span>
                             </h1>
-                            <p class="tagline mb-0">TECHNOLOGY INDONESIA.TID</p>
+                            <p class="tagline mb-0">TECHNOLOGY INDONESIA (.TID)</p>
                         </div>
                     </div>
                 </a>
@@ -83,6 +83,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#poster">Poster</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about">Tentang</a>
@@ -462,6 +465,57 @@
         </div>
     </section>
 
+    <!-- Poster Section dengan Bootstrap -->
+    <section id="poster" class="poster py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Poster Coming soon</h2>
+                <p class="lead">Koleksi poster kreatif dari WEBVIBES.ID</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <!-- Poster 1 -->
+                <div class="col-lg-8 col-md-10">
+                    <div class="poster-card position-relative rounded overflow-hidden shadow-lg">
+                        <img src="img/poster coming soon.jpeg" 
+                             alt="Poster Coming Soon" 
+                             class="img-fluid w-100 poster-image">
+                        
+                        <div class="poster-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="poster-content text-white text-center p-4">
+                                <h3 class="h2 fw-bold mb-3">Coming Soon February</h3>
+                                <p class="lead mb-4">Persiapan spesial untuk bulan Februari</p>
+                                <button class="btn btn-light btn-lg view-poster-btn" data-bs-toggle="modal" data-bs-target="#posterModal1">
+                                    <i class="fas fa-expand me-2"></i>Lihat Detail Poster
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poster Modal 1 -->
+    <div class="modal fade poster-modal" id="posterModal1" tabindex="-1" aria-labelledby="posterModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="posterModal1Label">Poster Coming Soon - February</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <img src="img/poster coming soon.jpeg" 
+                         alt="Poster Coming Soon Detail" 
+                         class="img-fluid w-100">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section dengan Bootstrap -->
     <section id="about" class="about py-5">
         <div class="container">
@@ -584,6 +638,7 @@
                                         <option value="ecommerce">E-Commerce</option>
                                         <option value="responsive">Website Responsif</option>
                                         <option value="seo">SEO Optimization</option>
+                                        <option value="poster">Desain Poster</option>
                                         <option value="consultation">Konsultasi Gratis</option>
                                         <option value="other">Lainnya</option>
                                     </select>
@@ -648,6 +703,7 @@
                             <li class="mb-2"><a href="#vision-mission" class="text-white text-decoration-none">Visi & Misi</a></li>
                             <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Layanan</a></li>
                             <li class="mb-2"><a href="#portfolio" class="text-white text-decoration-none">Portfolio</a></li>
+                            <li class="mb-2"><a href="#poster" class="text-white text-decoration-none">Poster</a></li>
                             <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Tentang Kami</a></li>
                             <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Kontak</a></li>
                         </ul>

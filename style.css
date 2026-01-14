@@ -435,6 +435,151 @@ body {
 }
 
 /* ============================================
+   POSTER SECTION
+   ============================================ */
+.poster {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.poster-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 500px;
+    cursor: pointer;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.poster-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+.poster-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    transition: transform 0.8s ease;
+}
+
+.poster-card:hover .poster-image {
+    transform: scale(1.03);
+}
+
+.poster-overlay {
+    background: linear-gradient(to bottom, 
+        rgba(26, 26, 46, 0) 0%, 
+        rgba(26, 26, 46, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-card:hover .poster-overlay {
+    opacity: 1;
+}
+
+.poster-content {
+    width: 100%;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.poster-card:hover .poster-content {
+    transform: translateY(0);
+}
+
+.poster-content h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.poster-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.view-poster-btn {
+    background-color: white;
+    color: var(--dark-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.view-poster-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(247, 37, 133, 0.3);
+}
+
+/* Poster Modal */
+.poster-modal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.poster-modal .modal-header {
+    background-color: var(--dark-color);
+    color: white;
+    border-bottom: 2px solid var(--accent-color);
+    padding: 1.5rem;
+}
+
+.poster-modal .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.poster-modal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.poster-modal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.poster-modal .modal-body {
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.poster-modal .modal-body img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+.poster-modal .modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+
+/* ============================================
    ABOUT SECTION
    ============================================ */
 .about-image img {
@@ -859,6 +1004,24 @@ footer {
         font-size: 0.8rem;
     }
     
+    .poster-card {
+        height: 400px;
+        max-width: 90%;
+    }
+    
+    .poster-content h3 {
+        font-size: 2rem;
+    }
+    
+    .poster-content p {
+        font-size: 1rem;
+    }
+    
+    .view-poster-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -894,6 +1057,18 @@ footer {
     
     .section-header h2 {
         font-size: 1.8rem;
+    }
+    
+    .poster-card {
+        height: 350px;
+    }
+    
+    .poster-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .poster-content p {
+        font-size: 0.9rem;
     }
     
     .footer-content {
@@ -932,7 +1107,9 @@ footer {
     .service-card:hover,
     .portfolio-item:hover,
     .btn:hover,
-    .nav-link:hover::after {
+    .nav-link:hover::after,
+    .poster-card:hover,
+    .view-poster-btn:hover {
         transform: none !important;
     }
 }
