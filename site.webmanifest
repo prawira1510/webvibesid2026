@@ -1,0 +1,23 @@
+{
+    "name": "WEBVIBES.ID - TECHNOLOGY INDONESIA",
+    "short_name": "WEBVIBES.ID",
+    "icons": [
+        {
+            "src": "img/PTTID-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/PTTID-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#4361ee",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "orientation": "portrait"
+}
