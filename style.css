@@ -294,7 +294,7 @@ body {
     background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
 }
 
-.meaning-item, .value-card, .mission-card, .service-card {
+.meaning-item, .value-card, .mission-card {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -302,12 +302,12 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.meaning-item:hover, .value-card:hover, .mission-card:hover, .service-card:hover {
+.meaning-item:hover, .value-card:hover, .mission-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.meaning-icon, .vision-icon, .mission-icon, .mission-card-icon, .service-icon {
+.meaning-icon, .vision-icon, .mission-icon, .mission-card-icon {
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -390,7 +390,7 @@ body {
 }
 
 /* ============================================
-   SERVICES SECTION
+   SERVICES SECTION - DIPERBAIKI
    ============================================ */
 .services {
     background-color: #f8f9ff;
@@ -399,6 +399,53 @@ body {
 .service-card {
     text-align: center;
     height: 100%;
+    transition: all 0.3s ease;
+    border: none;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 15px !important;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+.service-card .service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 0 auto 1rem;
+}
+
+.service-card h3 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 0;
 }
 
 /* ============================================
@@ -666,7 +713,6 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* ===== PERBAIKAN UKURAN LOGO DI ABOUT SECTION ===== */
 .about-image {
     display: flex;
     flex-direction: column;
@@ -715,7 +761,7 @@ body {
 }
 
 /* ============================================
-   FAVICON CUSTOM - AGAR KEBIACA GOOGLE & CHROME
+   FAVICON CUSTOM
    ============================================ */
 .favicon-fallback {
     position: fixed;
@@ -730,7 +776,6 @@ body {
     z-index: -9999;
 }
 
-/* Fallback untuk browser yang tidak mendukung favicon JPEG */
 link[rel="icon"] {
     border-radius: 50%;
 }
@@ -919,7 +964,6 @@ footer {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* Instagram Float Button */
 .instagram-float {
     position: fixed;
     bottom: 30px;
@@ -945,16 +989,6 @@ footer {
     transform: scale(1.1) rotate(8deg);
     box-shadow: 0 6px 20px rgba(214, 36, 159, 0.5);
     color: white;
-}
-
-/* Animasi Instagram Pulse */
-@keyframes instagramPulse {
-    0%, 100% {
-        box-shadow: 0 4px 12px rgba(214, 36, 159, 0.3);
-    }
-    50% {
-        box-shadow: 0 8px 25px rgba(214, 36, 159, 0.6);
-    }
 }
 
 .back-to-top {
@@ -1152,6 +1186,26 @@ footer {
     }
 }
 
+@keyframes instagramPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(214, 36, 159, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(214, 36, 159, 0.6);
+    }
+}
+
+/* ============================================
+   POSITION & OVERFLOW UTILITY
+   ============================================ */
+.position-relative {
+    position: relative;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
 /* ============================================
    RESPONSIVE STYLES
    ============================================ */
@@ -1274,6 +1328,10 @@ footer {
     .about-image img {
         max-width: 200px;
     }
+    
+    .service-card {
+        min-height: 280px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1352,6 +1410,14 @@ footer {
         bottom: 20px;
         right: 80px;
         font-size: 1.1rem;
+    }
+    
+    .service-card {
+        min-height: 260px;
+    }
+    
+    .service-card p {
+        font-size: 13px;
     }
 }
 
