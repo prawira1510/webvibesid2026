@@ -309,15 +309,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* BACKGROUND IMAGES - SESUAIKAN PATH DENGAN STRUKTUR FOLDER ANDA */
-.web-bg {
-    background: url('../img/web.jpg') center/cover no-repeat;
-}
-
-.vibes-bg {
-    background: url('../img/vibes.jpg') center/cover no-repeat;
-}
-
 /* DARK OVERLAY untuk keterbacaan teks */
 .meaning-item .overlay {
     position: absolute;
