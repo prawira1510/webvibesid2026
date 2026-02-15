@@ -288,109 +288,105 @@ body {
 }
 
 /* ============================================
-   MEANING SECTION
+   MEANING SECTION - DENGAN BACKGROUND GAMBAR
    ============================================ */
 .meaning-section {
     background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
 }
 
-.meaning-item, .value-card, .mission-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.meaning-item:hover, .value-card:hover, .mission-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.meaning-icon, .vision-icon, .mission-icon, .mission-card-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    color: white;
-    font-size: 1.5rem;
-    animation: bounceIn 1s ease;
-}
-
-.id-red-white {
-    color: #e63946;
-}
-
-.indonesia-symbol {
-    color: #e63946;
-    font-weight: 600;
-}
-
-.philosophy, .mission-statement, .vision-section, .mission-section, .contact-info, .contact-form {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Logo Animation */
-.logo-animation {
-    background: linear-gradient(135deg, var(--dark-color), #16213e);
-    border-radius: 15px;
-    color: white;
-}
-
-.animated-logo {
+.meaning-item {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 1rem;
-}
-
-.logo-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    min-height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    color: white;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* BACKGROUND IMAGES - SESUAIKAN PATH DENGAN STRUKTUR FOLDER ANDA */
+.web-bg {
+    background: url('../img/Web.jpg') center/cover no-repeat;
+    background-color: #4361ee; /* fallback color */
+}
+
+.vibes-bg {
+    background: url('../img/Vibes.jpg') center/cover no-repeat;
+    background-color: #f72585; /* fallback color */
+}
+
+/* DARK OVERLAY untuk keterbacaan teks */
+.meaning-item .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* CONTENT WRAPPER */
+.meaning-item .content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    width: 100%;
+}
+
+/* ICON STYLING */
+.meaning-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.meaning-icon i {
+    font-size: 28px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* TEXT STYLING */
+.meaning-item h3 {
     font-weight: 700;
-    animation: pulse 4s infinite;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
 }
 
-.web-circle {
-    background: linear-gradient(135deg, #4361ee, #3a0ca3);
-    top: 20px;
-    left: 20px;
-    animation-delay: 0s;
+.meaning-item p {
+    opacity: 0.95;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
-.vibes-circle {
-    background: linear-gradient(135deg, #f72585, #b5179e);
-    top: 20px;
-    right: 20px;
-    animation-delay: 1s;
+/* HOVER EFFECT */
+.meaning-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-.id-circle-red-white {
-    background: linear-gradient(135deg, #e63946, #ffffff);
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-delay: 2s;
-}
-
-.visual-caption {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+.meaning-item:hover .meaning-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 /* ============================================
-   SERVICES SECTION - DIPERBAIKI
+   SERVICES SECTION
    ============================================ */
 .services {
     background-color: #f8f9ff;
@@ -627,7 +623,7 @@ body {
 }
 
 /* ============================================
-   ABOUT SECTION - DIPERBAIKI (LOGO DIPERKECIL)
+   ABOUT SECTION
    ============================================ */
 .about {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
@@ -1235,6 +1231,31 @@ footer {
     .about-image img {
         max-width: 240px;
     }
+    
+    .meaning-item {
+        min-height: 240px;
+    }
+    
+    .meaning-item .content {
+        padding: 20px;
+    }
+    
+    .meaning-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .meaning-icon i {
+        font-size: 24px;
+    }
+    
+    .meaning-item h3 {
+        font-size: 1.25rem;
+    }
+    
+    .meaning-item p {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1418,6 +1439,24 @@ footer {
     
     .service-card p {
         font-size: 13px;
+    }
+    
+    .meaning-item {
+        min-height: 220px;
+    }
+    
+    .meaning-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .meaning-icon i {
+        font-size: 20px;
+    }
+    
+    .meaning-item .content {
+        padding: 15px;
     }
 }
 
