@@ -312,12 +312,10 @@ body {
 /* BACKGROUND IMAGES - SESUAIKAN PATH DENGAN STRUKTUR FOLDER ANDA */
 .web-bg {
     background: url('../img/Web.jpg') center/cover no-repeat;
-    background-color: #4361ee; /* fallback color */
 }
 
 .vibes-bg {
     background: url('../img/Vibes.jpg') center/cover no-repeat;
-    background-color: #f72585; /* fallback color */
 }
 
 /* DARK OVERLAY untuk keterbacaan teks */
