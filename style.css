@@ -311,11 +311,11 @@ body {
 
 /* BACKGROUND IMAGES - SESUAIKAN PATH DENGAN STRUKTUR FOLDER ANDA */
 .web-bg {
-    background: url('../img/Web.jpg') center/cover no-repeat;
+    background: url('../img/web.jpg') center/cover no-repeat;
 }
 
 .vibes-bg {
-    background: url('../img/Vibes.jpg') center/cover no-repeat;
+    background: url('../img/vibes.jpg') center/cover no-repeat;
 }
 
 /* DARK OVERLAY untuk keterbacaan teks */
