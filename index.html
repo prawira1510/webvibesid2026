@@ -177,7 +177,18 @@
                 <!-- 3 Card Makna - TANPA OVERLAY GELAP -->
                 <div class="row g-4 mb-4">
                     <div class="col-md-4">
-                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" style="background: url('img/Web.jpg') center/cover no-repeat; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" 
+                            style="min-height: 300px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+                            
+                            <!-- Background layer -->
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; background: linear-gradient(135deg, #2980b9 0%, #6c5ce7 100%);">
+                                <!-- Gambar background dengan opacity -->
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('img/Web.jpg') center/cover no-repeat; opacity: 0.6;"></div>
+                                <!-- Overlay gelap untuk keterbacaan teks -->
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.2);"></div>
+                            </div>
+                            
+                            <!-- Konten -->
                             <div style="position: relative; z-index: 2;">
                                 <div class="meaning-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
                                     <i class="fas fa-globe" style="color: white; font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
@@ -191,7 +202,16 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" style="background: url('img/Vibes.jpg') center/cover no-repeat; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" 
+                            style="min-height: 300px; display: flex; flex-direction: column; justify-content: center; background-color: #6c5ce7; position: relative;">
+                            
+                            <!-- Background dengan multiple fallback -->
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('img/Vibes.jpg') center/cover no-repeat; opacity: 0.8;"></div>
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3);"></div>
+                            </div>
+                            
+                            <!-- Konten -->
                             <div style="position: relative; z-index: 2;">
                                 <div class="meaning-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
                                     <i class="fas fa-wave-square" style="color: white; font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
