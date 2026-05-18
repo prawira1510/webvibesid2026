@@ -2,1088 +2,662 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBVIBES.ID </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WEBVIBES.ID - Getaran Digital Indonesia</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- CSS Custom Anda -->
-    <link rel="stylesheet" href="style.css">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     
-    <!-- Favicon Utama - JPEG -->
-    <link rel="icon" href="img/PTTID.jpg" type="image/jpeg" sizes="48x48">
-    <link rel="shortcut icon" href="img/PTTID.jpg" type="image/jpeg" sizes="48x48">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Favicon Fallback untuk Chrome/Android - PNG -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/PTTID-favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/PTTID-favicon-16x16.png">
-    
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/PTTID-apple-icon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/PTTID-apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/PTTID-apple-icon-120x120.png">
-    
-    <!-- Windows Tiles -->
-    <meta name="msapplication-TileImage" content="img/PTTID-ms-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#4361ee">
-    <meta name="msapplication-square70x70logo" content="img/PTTID-ms-icon-70x70.png">
-    <meta name="msapplication-square150x150logo" content="img/PTTID-ms-icon-150x150.png">
-    <meta name="msapplication-square310x310logo" content="img/PTTID-ms-icon-310x310.png">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#4361ee">
-    
-    <!-- Manifest -->
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Favicon Fallback Gambar Bulat (CSS sudah diatur) -->
-    <img src="img/PTTID.jpg" alt="Favicon" class="favicon-fallback" width="48" height="48">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="img/PTTID.jpg">
 </head>
 <body>
-    <!-- Konten website kamu -->
-</body>
-</html>
-    
-    <!-- Hidden Music Controls -->
-    <div class="hidden-music-controls" id="hidden-music-controls">
-        <button id="toggle-hidden-music" class="btn">
-            <i class="fas fa-music"></i>
-        </button>
-    </div>
 
-    <!-- Music Welcome Modal -->
-    <div class="music-welcome-modal" id="music-welcome-modal">
-        <div class="modal-content">
-            <div class="modal-icon">
-                <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="modal-logo">
-            </div>
-            <h2>Selamat Datang di WEBVIBES.ID</h2>
-            <div class="modal-buttons">
-                <button id="close-welcome-modal" class="modal-btn btn btn-primary">Lanjutkan</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header dan Navigasi dengan Bootstrap -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#home">
-                    <div class="d-flex align-items-center">
-                        <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="logo-img me-2" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <div>
-                            <h1 class="logo-main mb-0">
-                                <span class="logo-web">WEB</span>
-                                <span class="logo-vibes">VIBES</span>
-                                <span class="logo-id">.ID</span>
-                            </h1>
-                            <p class="tagline mb-0">TECHNOLOGY INDONESIA (T.ID)</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Hamburger Button (Bootstrap) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!-- Menu Items -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#meaning">Makna</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#vision-mission">Visi & Misi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Layanan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#poster">Poster</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">Tentang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Kontak</a>
-                        </li>
-                        <li class="nav-item ms-2">
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfeAU5BdwrQlxouh40qFGIuFaaFgOQD8PY-bAfQzwOM1odkCw/viewform?usp=header" 
-                            class="btn-nav btn btn-primary btn-sm" 
-                            target="_blank">
-                            Order Now
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section dengan Bootstrap -->
-    <section id="home" class="hero py-5" style="background: url('img/TECHNOLOGY\ INDONESIA.jpg') center/cover no-repeat;">
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h2 class="hero-title display-4 fw-bold mb-4" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8);">Transformasi Digital untuk <span class="highlight" style="color: #f72585; text-shadow: 2px 2px 5px rgba(0,0,0,0.8);">Bisnis Anda</span></h2>
-                        <p class="hero-subtitle lead mb-4" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">WEBVIBES.ID menciptakan website yang tidak hanya indah, tetapi juga fungsional, responsif, dan mendukung pertumbuhan bisnis Anda.</p>
-                        <div class="hero-buttons d-flex flex-wrap gap-3 mb-4">
-                            <a href="#contact" class="btn btn-primary btn-lg px-4" style="background-color: #f72585; border-color: #f72585; box-shadow: none;">Mulai Proyek Anda</a>
-                            <a href="#meaning" class="btn btn-outline-light btn-lg px-4" style="border-color: white; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); box-shadow: none;">Kenali Makna Kami</a>
-                        </div>
-                    </div>
-                </div>
-            <div class="col-lg-6">
-                <div class="hero-image position-relative d-flex justify-content-center align-items-center">
-                    <div class="floating-shapes">
-                        <div class="shape shape-1" style="background: rgba(255, 255, 255, 0.429);"></div>
-                        <div class="shape shape-2" style="background: rgba(255,255,255,0.1);"></div>
-                        <div class="shape shape-3" style="background: rgba(255,255,255,0.1);"></div>
-                    </div>
-                    <img src="img/bahasa%20programing.jpg" 
-                        alt="Web Development" 
-                        class="img-fluid" 
-                        style="box-shadow: none; border: 1px solid rgba(255,255,255,0.3); width: 70%; height: auto; margin: 0 auto; border-radius: 50px;">
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Makna WEBVIBES.ID Section dengan Bootstrap -->
-    <section id="meaning" class="meaning-section py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Makna WEBVIBES.ID</h2>
-            <p class="lead">Getaran Digital Indonesia yang Berkarakter</p>
-        </div>
-        
-        <div class="row g-4">
-            <!-- Kolom Kiri (7) -->
-            <div class="col-lg-7">
-                <!-- 3 Card Makna - TANPA OVERLAY GELAP -->
-                <div class="row g-4 mb-4">
-                    <!-- WEB -->
-                    <div class="col-md-4">
-                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" 
-                            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/Web.jpg') center/cover no-repeat; min-height: 250px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px;">
-                            <div style="position: relative; z-index: 2;">
-                                <div class="meaning-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                    <i class="fas fa-globe" style="color: white; font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                </div>
-                                <div class="meaning-text">
-                                    <h3 class="h4" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">WEB</h3>
-                                    <p class="small mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Representasi digital dari identitas bisnis Anda dengan jiwa dan karakter.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- VIBES -->
-                    <div class="col-md-4">
-                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" 
-                            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/Vibes.jpg') center/cover no-repeat; min-height: 250px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px;">
-                            <div style="position: relative; z-index: 2;">
-                                <div class="meaning-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                    <i class="fas fa-wave-square" style="color: white; font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                </div>
-                                <div class="meaning-text">
-                                    <h3 class="h4" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">VIBES</h3>
-                                    <p class="small mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Getaran positif dan energi yang menciptakan kesan mendalam pada website.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="meaning-item text-center p-4 h-100 position-relative overflow-hidden" style="background: url('img/ID.jpg') center/cover no-repeat; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="position: relative; z-index: 2;">
-                                <div class="meaning-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                    <i class="fas fa-flag" style="color: white; font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                </div>
-                                <div class="meaning-text">
-                                    <h3 class="h4" style="color: #e63946; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">.ID</h3>
-                                    <p class="small mb-0" style="color: rgb(0, 0, 0); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Identitas Indonesia, bangga dengan produk lokal dan kemajuan digital tanah air.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Filosofi Card -->
-                <div class="philosophy p-4 rounded" style="background-color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 class="h4 mb-3">Filosofi Kami</h3>
-                    <p class="mb-4">WEBVIBES.ID percaya bahwa setiap website harus memiliki "jiwa" - kombinasi harmonis antara teknologi canggih dan keindahan artistik dengan sentuhan Indonesia.</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-3 col-6">
-                            <div class="value-card text-center p-3 rounded position-relative overflow-hidden" style="background: url('img/Authenticity.jpg') center/cover no-repeat; min-height: 180px; display: flex; flex-direction: column; justify-content: center;">
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-fingerprint fa-2x mb-2" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);"></i>
-                                    <h4 class="h6" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 700;">Authenticity</h4>
-                                    <p class="small mb-0" style="color: rgb(255, 255, 255); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Keaslian dalam setiap proyek</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="value-card text-center p-3 rounded position-relative overflow-hidden" style="background: url('img/Vibrant.jpg') center/cover no-repeat; min-height: 180px; display: flex; flex-direction: column; justify-content: center;">
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-heartbeat fa-2x mb-2" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);"></i>
-                                    <h4 class="h6" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 700;">Vibrant</h4>
-                                    <p class="small mb-0" style="color: rgb(255, 255, 255); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Dinamis dan penuh semangat</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="value-card text-center p-3 rounded position-relative overflow-hidden" style="background: url('img/Connection.jpg') center/cover no-repeat; min-height: 180px; display: flex; flex-direction: column; justify-content: center;">
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-handshake fa-2x mb-2" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);"></i>
-                                    <h4 class="h6" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 700;">Connection</h4>
-                                    <p class="small mb-0" style="color: rgb(255, 255, 255); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Membangun hubungan digital</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="value-card text-center p-3 rounded position-relative overflow-hidden" style="background: url('img/Growth.jpg') center/cover no-repeat; min-height: 180px; display: flex; flex-direction: column; justify-content: center;">
-                                <div style="position: relative; z-index: 2;">
-                                    <i class="fas fa-seedling fa-2x mb-2" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);"></i>
-                                    <h4 class="h6" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 700;">Growth</h4>
-                                    <p class="small mb-0" style="color: rgb(255, 255, 255); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Mendukung pertumbuhan bisnis</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Kolom Kanan (5) -->
-            <div class="col-lg-5">
-                <div class="meaning-visual d-flex flex-column h-100">
-                    <!-- Logo Animation Card -->
-                    <div class="logo-animation p-4 rounded mb-4 text-white" style="background: linear-gradient(135deg, var(--dark-color), #16213e);">
-                        <div class="animated-logo position-relative mx-auto mb-3" style="width: 200px; height: 200px;">
-                            <div class="logo-circle web-circle position-absolute" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; background: linear-gradient(135deg, #4361ee, #3a0ca3); top: 20px; left: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                                <span style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">WEB</span>
-                            </div>
-                            <div class="logo-circle vibes-circle position-absolute" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; background: linear-gradient(135deg, #f72585, #b5179e); top: 20px; right: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                                <span style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">VIBES</span>
-                            </div>
-                            <div class="logo-circle id-circle-red-white position-absolute" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; background: linear-gradient(135deg, #e63946, #ffffff); bottom: 20px; left: 50%; transform: translateX(-50%); box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                                <span style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">.ID</span>
-                            </div>
-                        </div>
-                        <p class="visual-caption text-center mb-0" style="color: rgba(255,255,255,0.9); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Harmoni antara Teknologi, Kreativitas, dan Identitas Indonesia</p>
-                    </div>
-                    
-                    <!-- Mission Statement Card -->
-                    <div class="mission-statement p-4 rounded" style="background-color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05); flex: 1;">
-                        <h3 class="h4 mb-3">
-                            <i class="fas fa-bullseye text-primary me-2"></i> 
-                            Identitas Card Name WebVibes.ID
-                        </h3>
-                        <p class="mb-3">Kami juga membuat Card name untuk setiap anggota Webvibes.ID agar client mengenal anggota kami.</p>
-                        <img src="img/card%20WEBVIBES.ID%20(4).png" alt="card WEBVIBES.ID" class="img-fluid rounded" style="width: 100%; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
-                    </div>
-                </div>
+            <a class="navbar-brand" href="#home">
+                <img src="img/logo jas website.jpeg" alt="Logo" class="logo-img">
+                <span class="logo-text">
+                    <span class="logo-web">WEB</span>
+                    <span class="logo-vibes">VIBES</span>
+                    <span class="logo-id">.ID</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-company">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#meaning">Makna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vision-mission">Visi & Misi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#discount">Promo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#guarantee">Garansi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Info</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#founder">Pendiri</a></li>
+                            <li><a class="dropdown-item" href="#team">Tim Kami</a></li>
+                            <li><a class="dropdown-item" href="#career">Karir</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSfeAU5BdwrQlxouh40qFGIuFaaFgOQD8PY-bAfQzwOM1odkCw/viewform" target="_blank">Order Now</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-    <!-- Visi & Misi Section dengan Bootstrap -->
-    <section id="vision-mission" class="vision-mission-section py-5">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Visi & Misi WEBVIBES.ID</h2>
-                <p class="lead">Panduan dan Komitmen Kami untuk Masa Depan Digital Indonesia</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="vision-section p-4 rounded h-100">
-                        <div class="vision-header text-center mb-4">
-                            <div class="vision-icon mx-auto mb-3">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h3 class="h3">Visi Kami</h3>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-badge">#TechnologyIndonesia</div>
+                    <h1 class="hero-title">Transformasi Digital untuk <span class="gradient-text">Bisnis Anda</span></h1>
+                    <p class="hero-text">WEBVIBES.ID menciptakan website yang tidak hanya indah, tetapi juga fungsional, responsif, dan mendukung pertumbuhan bisnis Anda di era digital.</p>
+                    <div class="hero-buttons">
+                        <a href="#discount" class="btn btn-primary">Lihat Promo <i class="fas fa-tag"></i></a>
+                        <a href="#guarantee" class="btn btn-outline">Garansi Layanan <i class="fas fa-shield-alt"></i></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Proyek Selesai</div>
                         </div>
-                        <div class="vision-content">
-                            <h4 class="h5 fst-italic border-start border-3 border-primary ps-3 mb-4">"Menjadi Pelopor Solusi Digital Indonesia yang Membawa Getaran Positif ke Setiap Website"</h4>
-                            <p class="mb-3">Kami bercita-cita untuk:</p>
-                            <ul class="vision-list list-unstyled">
-                                <li class="d-flex align-items-start mb-2">
-                                    <i class="fas fa-rocket text-primary me-2 mt-1"></i>
-                                    <span>Menjadi mitra digital terpercaya bagi UKM dan perusahaan di Indonesia</span>
-                                </li>
-                                <li class="d-flex align-items-start mb-2">
-                                    <i class="fas fa-globe-asia text-primary me-2 mt-1"></i>
-                                    <span>Membawa standar kualitas internasional dengan sentuhan lokal</span>
-                                </li>
-                                <li class="d-flex align-items-start mb-2">
-                                    <i class="fas fa-hand-sparkles text-primary me-2 mt-1"></i>
-                                    <span>Menciptakan website yang tidak hanya berfungsi, tetapi juga menginspirasi</span>
-                                </li>
-                                <li class="d-flex align-items-start mb-2">
-                                    <i class="fas fa-users text-primary me-2 mt-1"></i>
-                                    <span>Membangun komunitas digital yang saling mendukung</span>
-                                </li>
-                                <li class="d-flex align-items-start mb-2">
-                                    <i class="fas fa-flag text-primary me-2 mt-1"></i>
-                                    <span>Mempromosikan produk Indonesia di kancah global</span>
-                                </li>
-                            </ul>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="35">0</div>
+                            <div class="stat-label">Klien Puas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label">Dukungan 24/7</div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-6">
-                    <div class="mission-section p-4 rounded h-100" style="background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                        <div class="mission-header text-center mb-4">
-                            <div class="mission-icon mx-auto mb-3">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h3 class="h3">Misi Kami</h3>
-                        </div>
-                        <div class="mission-content">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Inovasi Berkelanjutan.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-lightbulb" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Inovasi Berkelanjutan</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Terus mengembangkan teknologi terbaru untuk solusi digital terdepan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Kepuasan Klien.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-heart" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Kepuasan Klien</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Memberikan hasil yang melebihi ekspektasi klien</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Edukasi Digital.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-graduation-cap" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Edukasi Digital</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Membantu pelaku bisnis memahami potensi digital</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Kolaborasi Positif.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-hands-helping" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Kolaborasi Positif</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Menciptakan ekosistem digital yang sehat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Pertumbuhan Berkelanjutan.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-leaf" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Pertumbuhan Berkelanjutan</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Solusi yang scalable dan sustainable</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="mission-card p-3 rounded h-100 position-relative overflow-hidden" style="background: url('img/Kualitas Terbaik.jpg') center/cover no-repeat; min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                                        <div style="position: relative; z-index: 2;">
-                                            <div class="mission-card-icon mx-auto mb-3" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                                <i class="fas fa-award" style="color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
-                                            </div>
-                                            <h4 class="h6 text-center" style="color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 700;">Kualitas Terbaik</h4>
-                                            <p class="small text-center mb-0" style="color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Menjaga standar kualitas tertinggi</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image">
+                        <img src="img/bahasa%20programing.jpg" alt="Web Development" class="img-fluid">
+                        <div class="floating-card card1"><i class="fas fa-code"></i> Web Dev</div>
+                        <div class="floating-card card2"><i class="fas fa-mobile-alt"></i> Responsive</div>
+                        <div class="floating-card card3"><i class="fas fa-chart-line"></i> SEO</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pendiri WEBVIBES.ID Section -->
-<section id="founder" class="founder-section py-5" style="background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);">
-    <div class="container">
-        <!-- Section Header -->
-        <div class="section-header text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">3 Pendiri WEBVIBES.ID</h2>
-            <p class="lead">Getaran Digital Indonesia yang Berkarakter</p>
-            <div style="width: 80px; height: 4px; background: linear-gradient(135deg, #4361ee, #f72585); margin: 20px auto; border-radius: 2px;"></div>
-        </div>
-
-        <!-- Founder Card -->
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-                <div class="founder-card text-center p-5 rounded-4 position-relative overflow-hidden" style="background: white; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05);">
-                    
-                    <!-- Background Pattern -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/pattern.png') center/cover; opacity: 0.03; z-index: 0;"></div>
-                    
-                    <!-- Profile Image dengan Border Gradient Berputar -->
-                    <div class="position-relative mb-4" style="z-index: 2;">
-                        <div style="width: 180px; height: 180px; margin: 0 auto; border-radius: 50%; padding: 6px; background: linear-gradient(135deg, #4361ee, #f72585, #3a0ca3); background-size: 200% 200%; animation: rotateBorder 8s linear infinite;">
-                            <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(67,97,238,0.2);">
-                                <img src="img/wira.jpg" alt="Pendiri WEBVIBES.ID" class="img-fluid w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/180x180/4361ee/ffffff?text=PENDIRI'">
-                            </div>
-                        </div>
-                        
-                        <!-- Badge Founder -->
-                        <div style="position: absolute; bottom: 0; right: 50%; transform: translateX(50%); background: linear-gradient(135deg, #f72585, #b5179e); color: white; padding: 8px 25px; border-radius: 30px; font-size: 14px; font-weight: 600; box-shadow: 0 5px 15px rgba(247,37,133,0.3); white-space: nowrap; border: 2px solid white;">
-                            <i class="fas fa-crown me-2"></i> LEADER & ADMIN <br> WEBVIBES.ID & TECHNOLOGY INDONESIA
-                        </div>
-                    </div>
-                    
-                    <!-- Info Founder -->
-                    <div style="position: relative; z-index: 2;">
-                        <h2 class="h2 fw-bold mb-2" style="color: #1a1a2e; font-size: 2.2rem; letter-spacing: 1px;">PRAWIRA SEBASTIAN HUTAGALUNG</h2>
-                        <p style="color: #4361ee; font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Founder <br>• WEBVIBES.ID (WV.ID)<br>• Teknologi Indonesia (T.ID)</p>
-                        <div style="width: 100px; height: 3px; background: linear-gradient(135deg, #4361ee, #f72585); margin: 20px auto; border-radius: 3px;"></div>
-                        <p style="color: #6c757d; font-size: 1rem; line-height: 1.8; margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto;">
-                            WEBVIBES.ID berdiri sejak tahun 2024 dan juga mendirikan pusatnya yaitu Teknologi Indonesia. 
-                            Seorang leader muda yang visioner dalam menciptakan ekosistem digital berbasis 
-                            teknologi dan kreativitas Indonesia. Berkomitmen untuk membangun getaran digital 
-                            yang berkarakter serta memberdayakan generasi muda dan UMKM lokal. Meraka juga siap 
-                            membantu klien dalam mengembangkan bisnis melalui solusi digital inovatif yang 
-                            menggabungkan teknologi mutakhir dengan sentuhan budaya Indonesia.
-                            WEBVIBES.ID bukan hanya sekadar penyedia layanan digital, tetapi juga mitra strategis 
-                            yang memahami kebutuhan unik setiap klien dan berusaha memberikan hasil terbaik
-                            bahkan kami juga membuat Card name untuk setiap anggota Webvibes.ID agar client mengenal anggota kami.
-                            bahkan kami bukan hanya sekedar membuat website saja tetapi kami juga membuat system menggunakan bahasa 
-                            pemrograman seperti Python, JavaScript, PHP, dan lain-lain.
-                        </p>
-                                                
-                        <!-- Social Media -->
-                        <div class="d-flex justify-content-center gap-3 mb-3">
-                            <a href="#" class="social-icon" style="width: 45px; height: 45px; background: #4361ee; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 20px; box-shadow: 0 5px 15px rgba(67,97,238,0.2);">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 45px; height: 45px; background: #0e76a8; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 20px; box-shadow: 0 5px 15px rgba(14,118,168,0.2);">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 45px; height: 45px; background: #000000; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 45px; height: 45px; background: #5865F2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 20px; box-shadow: 0 5px 15px rgba(88,101,242,0.2);">
-                                <i class="fab fa-discord"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Quote -->
-                        <div style="margin-top: 30px; padding: 20px; background: rgba(67,97,238,0.05); border-radius: 15px; border-left: 5px solid #f72585;">
-                            <i class="fas fa-quote-left" style="color: #f72585; opacity: 0.5; font-size: 24px; margin-right: 10px;"></i>
-                            <span style="color: #1a1a2e; font-style: italic; font-weight: 500;">"Setiap website memiliki jiwa, tugas kami adalah menghidupkannya dengan teknologi dan kreativitas Kami."</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Hover Effect - Top Border -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(135deg, #4361ee, #f72585); transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left; z-index: 5;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Asisten WEBVIBES.ID Section -->
-<section id="asisten" class="asisten-section py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);">
-    <div class="container">
-        <!-- Section Header -->
-        <div class="section-header text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Asisten WEBVIBES.ID</h2>
-            <p class="lead">Support System Getaran Digital Indonesia</p>
-            <div style="width: 80px; height: 4px; background: linear-gradient(135deg, #4361ee, #f72585); margin: 20px auto; border-radius: 2px;"></div>
-        </div>
-
-        <!-- Asisten Cards -->
-        <div class="row g-4 justify-content-center">
-            <!-- Asisten 1 -->
-            <div class="col-lg-5 col-md-6">
-                <div class="asisten-card text-center p-4 rounded-4 position-relative overflow-hidden" style="background: white; box-shadow: 0 15px 40px rgba(0,0,0,0.05); transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05); height: 100%;">
-                    
-                    <!-- Background Pattern -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/pattern.png') center/cover; opacity: 0.02; z-index: 0;"></div>
-                    
-                    <!-- Profile Image -->
-                    <div class="position-relative mb-4" style="z-index: 2;">
-                        <div style="width: 160px; height: 160px; margin: 0 auto; border-radius: 50%; padding: 5px; background: linear-gradient(135deg, #4361ee, #3a0ca3); animation: rotateBorder 10s linear infinite;">
-                            <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(67,97,238,0.2);">
-                                <img src="img/fara.jpg" alt="Asisten WEBVIBES.ID" class="img-fluid w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/160x160/4361ee/ffffff?text=ASISTEN+1'">
-                            </div>
-                        </div>
-                        
-                        <!-- Badge Asisten -->
-                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #4361ee, #3a0ca3); color: white; padding: 6px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; box-shadow: 0 5px 15px rgba(67,97,238,0.3); white-space: nowrap; border: 2px solid white;">
-                            <i class="fas fa-user-tie me-2"></i> WEBSITE & PENASIHAT
-                        </div>
-                    </div>
-                    
-                    <!-- Info Asisten -->
-                    <div style="position: relative; z-index: 2;">
-                        <h3 class="h3 fw-bold mb-1" style="color: #1a1a2e;">ARFA MUHAMMAD FADILLAH</h3>
-                        <p style="color: #4361ee; font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">WEBSITE DEVELOPER</p>
-                        
-                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #4361ee, #3a0ca3); margin: 15px auto; border-radius: 3px;"></div>
-                        
-                        <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; padding: 0 10px;">
-                           Bertanggung jawab sebagai Penasehat di WEBVIBES.ID & Teknologi Indonesia.
-                           Memberikan arahan strategis, masukan visioner, serta bimbingan dalam pengembangan website, inovasi teknologi,
-                           dan kemajuan perusahaan. Berperan aktif dalam memastikan setiap langkah strategis selaras dengan visi besar
-                           getaran digital Indonesia yang berkarakter dan berdaya saing global.
-                        </p>
-                        
-                        <!-- Social Media -->
-                        <div class="d-flex justify-content-center gap-3">
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #4361ee; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #0e76a8; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #000000; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Hover Effect -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(135deg, #4361ee, #3a0ca3); transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left; z-index: 5;"></div>
-                </div>
-            </div>
-            
-            <!-- Asisten 2 -->
-            <div class="col-lg-5 col-md-6">
-                <div class="asisten-card text-center p-4 rounded-4 position-relative overflow-hidden" style="background: white; box-shadow: 0 15px 40px rgba(0,0,0,0.05); transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05); height: 100%;">
-                    
-                    <!-- Background Pattern -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/pattern.png') center/cover; opacity: 0.02; z-index: 0;"></div>
-                    
-                    <!-- Profile Image -->
-                    <div class="position-relative mb-4" style="z-index: 2;">
-                        <div style="width: 160px; height: 160px; margin: 0 auto; border-radius: 50%; padding: 5px; background: linear-gradient(135deg, #f72585, #b5179e); animation: rotateBorder 10s linear infinite;">
-                            <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(247,37,133,0.2);">
-                                <img src="img/darhai.jpg" alt="Asisten WEBVIBES.ID" class="img-fluid w-100 h-100" style="object-fit: cover;" onerror="this.src='https://via.placeholder.com/160x160/f72585/ffffff?text=ASISTEN+2'">
-                            </div>
-                        </div>
-                        
-                        <!-- Badge Asisten -->
-                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f72585, #b5179e); color: white; padding: 6px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; box-shadow: 0 5px 15px rgba(247,37,133,0.3); white-space: nowrap; border: 2px solid white;">
-                            <i class="fas fa-laptop-code me-2"></i> SOSMED & DESIGNER
-                        </div>
-                    </div>
-                    
-                    <!-- Info Asisten -->
-                    <div style="position: relative; z-index: 2;">
-                        <h3 class="h3 fw-bold mb-1" style="color: #1a1a2e;">MUHAMMAD HAIDAR Khalish Khairy</h3>
-                        <p style="color: #f72585; font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">SOSIAL MEDIA & DESAINER</p>
-                        
-                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #f72585, #b5179e); margin: 15px auto; border-radius: 3px;"></div>
-                        
-                        <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; padding: 0 10px;">
-                            Bertanggung jawab sebagai Social Media Specialist & Desainer Kreatif di WEBVIBES.ID dan Teknologi Indonesia.
-                            Mengelola seluruh platform media digital, menciptakan konten visual yang menarik dan konsisten,
-                            serta membangun brand identity yang kuat dan berkarakter. Berperan aktif dalam merancang strategi komunikasi visual, desain grafis, konten kreatif,
-                            dan campaign digital yang mampu meningkatkan engagement serta memperluas jangkauan audiens. Setiap karya desain dirancang dengan sentuhan artistik modern
-                            dan nilai estetika tinggi untuk menciptakan getaran digital Indonesia yang unik, berdaya saing, dan mudah dikenali.
-                        </p>
-                        
-                        <!-- Social Media -->
-                        <div class="d-flex justify-content-center gap-3">
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #f72585; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #0e76a8; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-icon" style="width: 40px; height: 40px; background: #000000; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; font-size: 18px;">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Hover Effect -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(135deg, #f72585, #b5179e); transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left; z-index: 5;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Tambahkan Font Awesome jika belum ada -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<!-- Tambahkan Font Awesome jika belum ada -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Layanan Section dengan Bootstrap -->
-   <section id="services" class="services py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Layanan Kami</h2>
-            <p class="lead">Kami menyediakan berbagai solusi digital untuk kebutuhan bisnis Anda</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="service-card text-center p-4 rounded h-100 position-relative overflow-hidden" style="background: url('img/Website Perusahaan.jpg') center/cover no-repeat; color: white;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Website Perusahaan</h3>
-                        <p class="mb-0">Website profesional yang merepresentasikan identitas dan nilai bisnis Anda dengan desain yang modern dan responsif.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-card text-center p-4 rounded h-100 position-relative overflow-hidden" style="background: url('img/E-Commerce.jpg') center/cover no-repeat; color: white;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3 class="h4 mb-3">E-Commerce</h3>
-                        <p class="mb-0">Platform toko online lengkap dengan sistem pembayaran, manajemen produk, dan dashboard admin yang user-friendly.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-card text-center p-4 rounded h-100 position-relative overflow-hidden" style="background: url('img/Website Responsif.jpg') center/cover no-repeat; color: white;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="h4 mb-3">Website Responsif</h3>
-                        <p class="mb-0">Website yang tampil sempurna di semua perangkat, dari desktop hingga smartphone, untuk menjangkau lebih banyak pelanggan.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-card text-center p-4 rounded h-100 position-relative overflow-hidden" style="background: url('img/SEO Optimization.jpg') center/cover no-repeat; color: white;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3 class="h4 mb-3">SEO Optimization</h3>
-                        <p class="mb-0">Optimasi website untuk mesin pencari sehingga bisnis Anda lebih mudah ditemukan oleh calon pelanggan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Portfolio Section dengan Bootstrap -->
-    <section id="portfolio" class="portfolio py-5">
+    <!-- About Company Section -->
+    <section id="about-company" class="about-company">
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Portfolio Kami</h2>
-                <p class="lead">Beberapa project yang telah kami selesaikan untuk klien</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Tentang Kami</span>
+                <h2 class="section-title">Mengenal <span class="gradient-text">WEBVIBES.ID</span></h2>
+                <p class="section-subtitle">Ekosistem Digital Indonesia yang Berkarakter</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="portfolio-item position-relative rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Portfolio 1" 
-                             class="img-fluid w-100 h-100 object-fit-cover">
-                        <div class="portfolio-overlay position-absolute bottom-0 start-0 end-0 text-white p-4">
-                            <h3 class="h4">Restoran Bintang</h3>
-                            <p class="mb-0">Website untuk restoran fine dining dengan sistem reservasi online</p>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="company-card">
+                        <div class="company-icon"><i class="fas fa-globe"></i></div>
+                        <h3>WEBVIBES.ID</h3>
+                        <p>WEBVIBES.ID adalah brand layanan digital yang fokus pada pengembangan website, aplikasi, dan solusi teknologi kreatif. Kami hadir untuk memberikan getaran positif dalam setiap karya digital yang kami ciptakan.</p>
+                        <div class="company-features">
+                            <div class="feature"><i class="fas fa-check-circle"></i> Website Development</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> Mobile Application</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> UI/UX Design</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> Digital Marketing</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="portfolio-item position-relative rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Portfolio 2" 
-                             class="img-fluid w-100 h-100 object-fit-cover">
-                        <div class="portfolio-overlay position-absolute bottom-0 start-0 end-0 text-white p-4">
-                            <h3 class="h4">FashionStore ID</h3>
-                            <p class="mb-0">Toko online fashion dengan katalog produk dan integrasi pembayaran</p>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="company-card">
+                        <div class="company-icon"><i class="fas fa-building"></i></div>
+                        <h3>Technology Indonesia (T.ID)</h3>
+                        <p>Technology Indonesia adalah induk perusahaan dari WEBVIBES.ID, sebuah pusat inovasi teknologi yang berkomitmen untuk memajukan industri digital di Indonesia melalui riset, pengembangan, dan pemberdayaan talenta lokal.</p>
+                        <div class="company-features">
+                            <div class="feature"><i class="fas fa-check-circle"></i> Tech Research & Development</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> Digital Talent Incubator</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> Tech Consultation</div>
+                            <div class="feature"><i class="fas fa-check-circle"></i> IT Infrastructure</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="portfolio-item position-relative rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Portfolio 3" 
-                             class="img-fluid w-100 h-100 object-fit-cover">
-                        <div class="portfolio-overlay position-absolute bottom-0 start-0 end-0 text-white p-4">
-                            <h3 class="h4">Klinik Sehat</h3>
-                            <p class="mb-0">Website untuk klinik kesehatan dengan sistem janji temu online</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="company-badge mt-4 text-center" data-aos="fade-up">
+                <div class="badge-container">
+                    <span class="badge-item"><i class="fas fa-certificate"></i> Registered Company</span>
+                    <span class="badge-item"><i class="fas fa-trophy"></i> Award Winning</span>
+                    <span class="badge-item"><i class="fas fa-users"></i> 50+ Clients</span>
+                    <span class="badge-item"><i class="fas fa-code"></i> 100+ Projects</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Poster Section dengan Bootstrap -->
-    <section id="poster" class="poster py-5">
+    <!-- Makna Section -->
+    <section id="meaning" class="meaning">
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Poster</h2>
-                <p class="lead">poster anggota WEBVIBES.ID</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Makna</span>
+                <h2 class="section-title">Apa Arti <span class="gradient-text">WEBVIBES.ID</span>?</h2>
+                <p class="section-subtitle">Getaran Digital Indonesia yang Berkarakter</p>
             </div>
-            
-            <div class="row justify-content-center">
-                <!-- Poster 1 -->
-                <div class="col-lg-8 col-md-10">
-                    <div class="poster-card position-relative rounded overflow-hidden shadow-lg">
-                        <img src="img/poster coming soon.jpeg" 
-                             alt="Poster Coming Soon" 
-                             class="img-fluid w-100 poster-image">
-                        
-                        <div class="poster-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                            <div class="poster-content text-white text-center p-4">
-                                <h3 class="h2 fw-bold mb-3">Coming Soon February</h3>
-                                <p class="lead mb-4">Persiapan spesial untuk bulan Februari</p>
-                                <button class="btn btn-light btn-lg view-poster-btn" data-bs-toggle="modal" data-bs-target="#posterModal1">
-                                    <i class="fas fa-expand me-2"></i>Lihat Detail Poster
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Poster Modal 1 -->
-    <div class="modal fade poster-modal" id="posterModal1" tabindex="-1" aria-labelledby="posterModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="posterModal1Label">Coming Soon - February</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <img src="img/poster coming soon.jpeg" 
-                         alt="Poster Coming Soon Detail" 
-                         class="img-fluid w-100">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section dengan Bootstrap -->
-    <section id="about" class="about py-5">
-    <div class="container">
-        <div class="row align-items-center g-4">
-        <div class="col-lg-6">
-            <div class="about-content">
-            <h2 class="display-5 fw-bold mb-4">Tentang WEBVIBES.ID</h2>
-            <p class="lead mb-4">WEBVIBES.ID adalah bagian dari ekosistem TECHNOLOGY INDONESIA, pusat inovasi digital terkemuka yang berkomitmen untuk memberdayakan bisnis lokal melalui solusi teknologi berkualitas.</p>
-            <p class="mb-4">Sebagai brand yang lahir dari semangat kolaborasi dan kemajuan, WEBVIBES.ID hadir untuk memberikan layanan pengembangan website yang tidak hanya estetis, tetapi juga fungsional dan selaras dengan identitas brand Anda. Kami percaya bahwa setiap bisnis memiliki "vibes" atau getaran uniknya sendiri, dan tugas kamilah untuk mewujudkannya dalam bentuk digital yang memukau.</p>
-            <p class="mb-4">TECHNOLOGY INDONESIA sebagai induk dari WEBVIBES.ID, merupakan pusat riset, pengembangan, dan inovasi teknologi yang fokus pada peningkatan daya saing industri kreatif digital di tanah air. Dengan dukungan infrastruktur modern dan talenta terbaik, kami menjembatani kebutuhan pasar dengan solusi digital yang berdampak nyata.</p>
-            <p class="fw-semibold text-primary mb-0">Bersama WEBVIBES.ID dan TECHNOLOGY INDONESIA, wujudkan visi digital Anda dengan percaya diri.</p>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="about-image">
-            <img src="img/logo jas website.jpeg" alt="WEBVIBES.ID dan TECHNOLOGY INDONESIA" class="img-fluid rounded shadow-lg">
-            <img src="img/logo PTID.png" alt="WEBVIBES.ID dan TECHNOLOGY INDONESIA" class="img-fluid rounded shadow-lg">
-            <div class="mt-4 text-center">
-                <span class="badge bg-primary p-3 fs-6">#TechnologyIndonesia</span>
-                <span class="badge bg-dark p-3 fs-6 ms-2">#WebVibesID</span>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    </section> 
-
-    <!-- Contact Section dengan Bootstrap - WebVibesID Version -->
-    <section id="contact" class="contact-section py-5">
-        <div class="container">
-            <!-- Header Section -->
-            <div class="text-center mb-5">
-                <h2 class="section-title display-5 fw-bold">Hubungi Kami</h2>
-                <div class="divider-custom mx-auto"></div>
-                <p class="section-subtitle text-muted mt-3 mx-auto" style="max-width: 600px;">
-                    Mari diskusikan proyek website Anda bersama WebVibesID. 
-                    Hubungi kami untuk konsultasi dan informasi lebih lanjut.
-                </p>
-            </div>
-
-            <!-- Contact Info Cards (Terpisah Kiri & Kanan) -->
-            <div class="row g-4 justify-content-center">
-                <!-- Kolom Kiri: Alamat & Email -->
-                <div class="col-lg-5">
-                    <div class="contact-card-left p-4 p-lg-5 h-100">
-                        <div class="contact-subtitle mb-4">
-                            <span class="badge-contact">Informasi Kontak</span>
-                            <h3 class="mt-3 fw-semibold">Hubungi Langsung</h3>
-                            <p class="text-muted small">Silakan hubungi kami melalui kontak di bawah ini</p>
-                        </div>
-
-                        <!-- Alamat -->
-                        <div class="contact-item-wrapper mb-4">
-                            <div class="contact-item d-flex p-3">
-                                <div class="contact-icon-circle me-3">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-content">
-                                    <span class="contact-label text-uppercase small text-muted">Alamat Kantor</span>
-                                    <h5 class="contact-value fw-semibold mb-2">WEBVIBES.ID</h5>
-                                    <p class="contact-address mb-0">
-                                        Jl. Pisangan Lama III No.8<br>
-                                        (patokan Isi Ulang Transqua)<br>
-                                        Jakarta Timur
-                                    </p>
-                                    <a href="https://maps.google.com/?q=Jl. Pisangan Lama III No.8 Jakarta" 
-                                    target="_blank" 
-                                    class="btn-map-link mt-2 d-inline-block small">
-                                        <i class="fas fa-map-pin me-1"></i>Buka di Google Maps
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="contact-item-wrapper mb-4">
-                            <div class="contact-item d-flex align-items-center p-3">
-                                <div class="contact-icon-circle me-3">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-content">
-                                    <span class="contact-label text-uppercase small text-muted">Email</span>
-                                    <h5 class="contact-value mb-0 fw-semibold">technology.webvibesid@gmail.com</h5>
-                                    <small class="text-muted">Balasan dalam 1x24 jam</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Social Media -->
-                        <div class="social-media-section mt-5">
-                            <p class="small text-muted mb-2">Ikuti kami di:</p>
-                            <div class="social-icons d-flex gap-2">
-                                <a href="#https://www.instagram.com/webvibesid?igsh=cWF2djh6bGNvano3" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#www.linkedin.com/in/technology-indonesia-8561613b3" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kolom Kanan: Jam Operasional & WhatsApp -->
-                <div class="col-lg-5">
-                    <div class="contact-card-right p-4 p-lg-5 h-100">
-                        <div class="contact-subtitle mb-4">
-                            <span class="badge-contact">Layanan & Operasional</span>
-                            <h3 class="mt-3 fw-semibold">Jam Layanan</h3>
-                            <p class="text-muted small">Kami siap melayani Anda pada jam kerja</p>
-                        </div>
-
-                        <!-- Jam Operasional -->
-                        <div class="contact-item-wrapper mb-4">
-                            <div class="contact-item d-flex align-items-center p-3">
-                                <div class="contact-icon-circle me-3">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="contact-content w-100">
-                                    <span class="contact-label text-uppercase small text-muted">Jam Operasional</span>
-                                    
-                                    <!-- Tabel Jam -->
-                                    <div class="operational-hours mt-2">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span class="day">Senin - Jumat</span>
-                                            <span class="hours fw-semibold">09.00 - 17.00 WIB</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span class="day">Sabtu - Minggu</span>
-                                            <span class="hours fw-semibold text-danger">Libur</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Info Tambahan -->
-                                    <div class="alert alert-light border mt-3 mb-0 py-2 px-3 small">
-                                        <i class="fas fa-info-circle text-info me-2"></i>
-                                        <span>Konsultasi via WhatsApp tersedia 24/7</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- WhatsApp -->
-                        <div class="contact-item-wrapper mb-4">
-                            <div class="contact-item d-flex align-items-center p-3">
-                                <div class="contact-icon-circle me-3">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-content">
-                                    <span class="contact-label text-uppercase small text-muted">WhatsApp</span>
-                                    <h5 class="contact-value mb-0 fw-semibold">0878 2481 5854</h5>
-                                    <a href="https://wa.me/6287824815854" class="btn-wa-link mt-1 d-inline-block small">
-                                        <i class="fab fa-whatsapp me-1"></i>Chat via WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Telepon (Opsional) -->
-                        <div class="contact-item-wrapper">
-                            <div class="contact-item d-flex align-items-center p-3">
-                                <div class="contact-icon-circle me-3">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="contact-content">
-                                    <span class="contact-label text-uppercase small text-muted">Telepon untuk konsultasi</span>
-                                    <h5 class="contact-value mb-0 fw-semibold">(+62) 878-2481-5854</h5>
-                                    <small class="text-muted">Senin - Jumat, 09.00 - 17.00</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer dengan Bootstrap -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
             <div class="row g-4">
-                <!-- Logo + Tagline -->
-                <div class="col-lg-4">
-                    <div class="footer-logo">
-                        <div class="footer-logo-container d-flex align-items-center mb-3">
-                            <img src="img/logo jas website.jpeg" alt="Logo WebVibes" class="footer-logo-img rounded-circle me-3" style="width: 60px; height: 60px;">
-                            <div>
-                                <h2 class="footer-logo-text h4 mb-0">
-                                    <span class="footer-web">WEB</span>
-                                    <span class="footer-vibes">VIBES</span>
-                                    <span class="footer-id">.ID</span>
-                                </h2>
-                                <p class="tagline small mb-0">Technology Vibes for the Digital Era</p>
-                            </div>
-                        </div>
-                        <p class="footer-slogan small text-light mb-4">
-                            Menciptakan website dengan jiwa, karakter, dan getaran positif khas Indonesia.
-                        </p>
-                        <div class="social-icons d-flex gap-3">
-                            <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
-                            <a href="https://wa.me/6287824815854" target="_blank" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
-                        </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-globe"></i></div>
+                        <h3>WEB</h3>
+                        <p>Representasi digital dari identitas bisnis Anda dengan jiwa dan karakter yang kuat di dunia maya.</p>
                     </div>
                 </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-wave-square"></i></div>
+                        <h3>VIBES</h3>
+                        <p>Getaran positif dan energi yang menciptakan kesan mendalam pada setiap pengunjung website Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-flag"></i></div>
+                        <h3>.ID</h3>
+                        <p>Identitas Indonesia, bangga dengan produk lokal dan kemajuan digital tanah air.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Quick Links -->
-                <div class="col-lg-3">
-                    <div class="footer-links">
-                        <h3 class="h5 mb-3">Tautan Cepat</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Beranda</a></li>
-                            <li class="mb-2"><a href="#meaning" class="text-white text-decoration-none">Makna WEBVIBES</a></li>
-                            <li class="mb-2"><a href="#vision-mission" class="text-white text-decoration-none">Visi & Misi</a></li>
-                            <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Layanan</a></li>
-                            <li class="mb-2"><a href="#portfolio" class="text-white text-decoration-none">Portfolio</a></li>
-                            <li class="mb-2"><a href="#poster" class="text-white text-decoration-none">Poster</a></li>
-                            <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Tentang Kami</a></li>
-                            <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Kontak</a></li>
+    <!-- Visi & Misi Section -->
+    <section id="vision-mission" class="vision-mission">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Visi & Misi</span>
+                <h2 class="section-title">Tujuan <span class="gradient-text">Kami</span></h2>
+                <p class="section-subtitle">Panduan dan Komitmen untuk Masa Depan Digital Indonesia</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="vision-card">
+                        <div class="vm-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Visi Kami</h3>
+                        <p class="visi-quote">"Menjadi Pelopor Solusi Digital Indonesia yang Membawa Getaran Positif ke Setiap Website"</p>
+                        <ul class="vm-list">
+                            <li><i class="fas fa-check-circle"></i> Mitra digital terpercaya UKM Indonesia</li>
+                            <li><i class="fas fa-check-circle"></i> Standar kualitas internasional sentuhan lokal</li>
+                            <li><i class="fas fa-check-circle"></i> Website yang menginspirasi</li>
+                            <li><i class="fas fa-check-circle"></i> Komunitas digital yang saling mendukung</li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Newsletter -->
-                <div class="col-lg-5">
-                    <div class="footer-newsletter">
-                        <h3 class="h5 mb-3">Berlangganan Newsletter</h3>
-                        <p class="small text-light mb-4">Dapatkan tips dan informasi terbaru seputar website dan digital marketing.</p>
-                        <div class="newsletter-form d-flex mb-4">
-                            <input type="email" class="form-control rounded-0 rounded-start" placeholder="Email Anda">
-                            <button type="submit" class="btn btn-primary rounded-0 rounded-end">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="mission-card">
+                        <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Misi Kami</h3>
+                        <div class="mission-grid">
+                            <div class="mission-item"><i class="fas fa-lightbulb"></i><span>Inovasi Berkelanjutan</span></div>
+                            <div class="mission-item"><i class="fas fa-heart"></i><span>Kepuasan Klien</span></div>
+                            <div class="mission-item"><i class="fas fa-graduation-cap"></i><span>Edukasi Digital</span></div>
+                            <div class="mission-item"><i class="fas fa-hands-helping"></i><span>Kolaborasi Positif</span></div>
+                            <div class="mission-item"><i class="fas fa-leaf"></i><span>Pertumbuhan Berkelanjutan</span></div>
+                            <div class="mission-item"><i class="fas fa-award"></i><span>Kualitas Terbaik</span></div>
                         </div>
-                        <div class="copyright-small">
-                            <p class="small mb-1">&copy; <span id="current-year"></span> WEBVIBES.ID</p>
-                            <p class="small text-light">
-                                <i class="fas fa-heart text-danger"></i> Bangga Produk Indonesia <i class="fas fa-heart text-danger"></i>
-                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Layanan</span>
+                <h2 class="section-title">Yang Kami <span class="gradient-text">Tawarkan</span></h2>
+                <p class="section-subtitle">Solusi digital lengkap untuk kebutuhan bisnis Anda</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-laptop-code"></i></div><h3>Website Perusahaan</h3><p>Website profesional yang merepresentasikan identitas bisnis Anda.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-shopping-cart"></i></div><h3>E-Commerce</h3><p>Toko online lengkap dengan sistem pembayaran dan manajemen produk.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h3>Responsive Design</h3><p>Tampil sempurna di semua perangkat.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="400">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-search"></i></div><h3>SEO Optimization</h3><p>Optimasi website agar mudah ditemukan di mesin pencari.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="500">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-palette"></i></div><h3>UI/UX Design</h3><p>Desain antarmuka yang menarik dan pengalaman pengguna optimal.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="600">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-database"></i></div><h3>Backend Developer</h3><p>Sistem backend yang robust dan database terintegrasi.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Project <span class="gradient-text">Terbaru</span></h2>
+                <p class="section-subtitle">Beberapa project yang telah kami selesaikan untuk klien</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Restoran">
+                        <div class="portfolio-overlay"><h4>Restoran Bintang</h4><p>Website Reservasi Online</p><span>Lihat <i class="fas fa-arrow-right"></i></span></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop" alt="Fashion">
+                        <div class="portfolio-overlay"><h4>FashionStore ID</h4><p>Toko Online Fashion</p><span>Lihat <i class="fas fa-arrow-right"></i></span></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Klinik">
+                        <div class="portfolio-overlay"><h4>Klinik Sehat</h4><p>Sistem Janji Temu</p><span>Lihat <i class="fas fa-arrow-right"></i></span></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Property">
+                        <div class="portfolio-overlay"><h4>Property Plus</h4><p>Website Properti</p><span>Lihat <i class="fas fa-arrow-right"></i></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diskon Slider Section - Berdasarkan Hari Besar -->
+    <section id="discount" class="discount">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Promo Spesial</span>
+                <h2 class="section-title text-white">Diskon <span class="gradient-text" id="discountEventName">Terbatas</span></h2>
+                <p class="section-subtitle text-white-50" id="discountEventDesc">Dapatkan penawaran menarik untuk berbagai layanan digital</p>
+            </div>
+            <div class="swiper discountSwiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper" id="discountSlider">
+                    <!-- Slide akan diisi oleh JavaScript berdasarkan hari besar -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garansi Card Section -->
+    <section id="guarantee" class="guarantee">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Garansi Layanan</span>
+                <h2 class="section-title">Perlindungan <span class="gradient-text">Penuh</span></h2>
+                <p class="section-subtitle">Kami memberikan garansi untuk setiap layanan yang Anda pesan</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Garansi Perbaikan Gratis</h3>
+                        <p>Perbaikan website, desain, atau aplikasi GRATIS selama masa garansi berlaku</p>
+                        <div class="guarantee-period">Masa Garansi: 3 Bulan</div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Garansi Revisi</h3>
+                        <p>Revisi tanpa batas hingga Anda puas dengan hasil pekerjaan kami</p>
+                        <div class="guarantee-period">Masa Garansi: 1 Bulan</div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Garansi Tepat Waktu</h3>
+                        <p>Pengerjaan sesuai deadline yang disepakati, atau uang kembali</p>
+                        <div class="guarantee-period">Garansi 100%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Garansi Card Digital -->
+            <div class="guarantee-digital-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="digital-card">
+                    <div class="card-header">
+                        <i class="fas fa-id-card"></i>
+                        <h3>WEBVIBES.ID GARANSI CARD</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-number" id="guaranteeCardNumber">WV-2024-XXXX-XXXX</div>
+                        <div class="card-holder">
+                            <span>Pemilik Garansi:</span>
+                            <strong id="cardHolderName">[Nama Klien]</strong>
+                        </div>
+                        <div class="card-service">
+                            <span>Layanan:</span>
+                            <strong id="cardService">[Jenis Layanan]</strong>
+                        </div>
+                        <div class="card-date">
+                            <span>Berlaku s/d:</span>
+                            <strong id="cardExpiry">[Tanggal Expired]</strong>
+                        </div>
+                        <div class="card-seal">
+                            <i class="fas fa-stamp"></i> WEBVIBES.ID & TECHNOLOGY INDONESIA
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>⚠️ PERINGATAN: Kartu garansi ini adalah bukti sah layanan. Jika hilang, bukan tanggung jawab WEBVIBES.ID. Perbaikan website, desain, dan layanan lainnya tidak dapat diproses tanpa menunjukkan kartu garansi asli.</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom text-center pt-4 mt-4 border-top border-secondary">
-                <p class="mb-0 small fst-italic">"Getaran Digital Indonesia - Menciptakan website yang tidak hanya dilihat, tetapi juga dirasakan."</p>
+            <!-- Cara Klaim Garansi -->
+            <div class="guarantee-steps" data-aos="fade-up" data-aos-delay="500">
+                <h3><i class="fas fa-clipboard-list"></i> Cara Klaim Garansi</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Tunjukkan kartu garansi Anda</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Jelaskan masalah yang dialami</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Tim kami akan segera memperbaiki</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Selesai! GRATIS tanpa biaya</div>
+                    </div>
+                </div>
+                <div class="guarantee-note">
+                    <i class="fas fa-info-circle"></i>
+                    Garansi hanya berlaku untuk layanan yang telah diselesaikan oleh WEBVIBES.ID. Kartu garansi dikirim via email setelah project selesai.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Klaim Promo -->
+    <div class="modal fade" id="claimModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Klaim Promo <span id="modalPromoName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="claimForm">
+                        <input type="hidden" id="promoType" name="promoType">
+                        <input type="hidden" id="promoPrice" name="promoPrice">
+                        <input type="hidden" id="promoEvent" name="promoEvent">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fullName" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="emailClaim" required placeholder="Masukkan email aktif Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nomor WhatsApp <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="phoneClaim" required placeholder="Contoh: 081234567890">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nama Perusahaan/Bisnis/Sekolah <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="businessName" required placeholder="Nama perusahaan, bisnis, atau sekolah Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Promo yang Dipilih</label>
+                            <input type="text" class="form-control" id="selectedPromo" readonly style="background: #f0f0f0;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Harga Promo</label>
+                            <input type="text" class="form-control" id="selectedPrice" readonly style="background: #f0f0f0;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Event Promo</label>
+                            <input type="text" class="form-control" id="selectedEvent" readonly style="background: #f0f0f0;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Catatan (Opsional)</label>
+                            <textarea class="form-control" id="notes" rows="3" placeholder="Tambahkan catatan jika ada..."></textarea>
+                        </div>
+                        
+                        <div class="alert alert-info small">
+                            <i class="fas fa-info-circle"></i> Data Anda akan kami proses dalam 1x24 jam. Tim kami akan menghubungi Anda via WhatsApp/Email.
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100" id="submitClaim">
+                            <i class="fas fa-paper-plane"></i> Kirim Klaim Promo
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 class="mt-3">Klaim Berhasil!</h4>
+                <p>Terima kasih telah mengklaim promo. Tim kami akan menghubungi Anda dalam 1x24 jam.</p>
+                <button class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Founder Section -->
+    <section id="founder" class="founder d-none">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Pendiri</span>
+                <h2 class="section-title">Di Balik <span class="gradient-text">WEBVIBES.ID</span></h2>
+                <p class="section-subtitle">Getaran Digital Indonesia yang Berkarakter</p>
+            </div>
+            <div class="founder-card" data-aos="flip-up">
+                <div class="founder-img">
+                    <img src="img/wira.jpg" alt="Founder" onerror="this.src='https://via.placeholder.com/200'">
+                    <div class="founder-badge">Founder & CEO</div>
+                </div>
+                <div class="founder-info">
+                    <h2>PRAWIRA SEBASTIAN HUTAGALUNG</h2>
+                    <p class="founder-title">LEADER & ADMIN WEBVIBES.ID & TECHNOLOGY INDONESIA</p>
+                    <p>WEBVIBES.ID berdiri sejak tahun 2024. Seorang leader muda yang visioner dalam menciptakan ekosistem digital berbasis teknologi dan kreativitas Indonesia. Berkomitmen untuk membangun getaran digital yang berkarakter serta memberdayakan generasi muda dan UMKM lokal.</p>
+                    <div class="founder-quote"><i class="fas fa-quote-left"></i> "Setiap website memiliki jiwa, tugas kami adalah menghidupkannya dengan teknologi dan kreativitas."</div>
+                    <div class="founder-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-discord"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team d-none">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Tim Kami</span>
+                <h2 class="section-title">Bertemu <span class="gradient-text">Tim</span> Kami</h2>
+                <p class="section-subtitle">Profesional yang siap membantu kesuksesan digital Anda</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+                    <div class="assistant-card">
+                        <img src="img/fara.jpg" alt="Asisten" onerror="this.src='https://via.placeholder.com/120'">
+                        <h3>ARFA MUHAMMAD FADILLAH</h3>
+                        <p class="assistant-title">WEBSITE DEVELOPER & PENASIHAT</p>
+                        <p>Bertanggung jawab sebagai Penasehat di WEBVIBES.ID & Teknologi Indonesia.</p>
+                        <div class="assistant-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="assistant-card">
+                        <img src="img/darhai.jpg" alt="Asisten" onerror="this.src='https://via.placeholder.com/120'">
+                        <h3>MUHAMMAD HAIDAR KHALISH KHAIRY</h3>
+                        <p class="assistant-title">SOSIAL MEDIA & DESAINER</p>
+                        <p>Bertanggung jawab sebagai Social Media Specialist & Desainer Kreatif.</p>
+                        <div class="assistant-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section id="career" class="career d-none">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Karir</span>
+                <h2 class="section-title">Bergabung <span class="gradient-text">Bersama Kami</span></h2>
+                <p class="section-subtitle">Jadilah bagian dari tim yang membawa getaran digital Indonesia</p>
+            </div>
+            <div class="career-card">
+                <div class="career-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Kirim Lamaran Anda</h3>
+                <p>Kirim CV dan portfolio Anda ke email kami: <strong>technology.webvibesid@gmail.com</strong></p>
+                <p>Kami sedang mencari:</p>
+                <ul>
+                    <li>Web Developer (Junior & Senior)</li>
+                    <li>UI/UX Designer</li>
+                    <li>Digital Marketing Specialist</li>
+                    <li>Content Creator</li>
+                </ul>
+                <a href="mailto:technology.webvibesid@gmail.com" class="btn btn-primary">Kirim Lamaran</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section dengan Google Maps -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Lokasi Kami</span>
+                <h2 class="section-title">Temukan <span class="gradient-text">Kami</span></h2>
+                <p class="section-subtitle">Kunjungi kantor kami atau hubungi melalui kontak di bawah</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Alamat Kantor</h4><p>Jl. Pisangan Lama III No.8, Jakarta Timur</p><a href="https://maps.google.com/?q=Jl. Pisangan Lama III No.8 Jakarta" target="_blank">Lihat di Maps →</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p>technology.webvibesid@gmail.com</p><small>Balasan 1x24 jam</small></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div><h4>WhatsApp</h4><p>0878 2481 5854</p><a href="https://wa.me/6287824815854" target="_blank">Chat Sekarang →</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><h4>Jam Operasional</h4><p>Senin - Jumat: 09.00 - 17.00 WIB</p><p>Sabtu - Minggu: Libur</p></div></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.125847349437!2d106.863875!3d-6.218254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f39120d64819%3A0x8f5c2f5c8f5c2f5!2sJakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="map-caption"><i class="fas fa-location-dot"></i> Jl. Pisangan Lama III No.8, Jakarta Timur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <img src="img/logo jas website.jpeg" alt="Logo">
+                        <h3><span class="logo-web">WEB</span><span class="logo-vibes">VIBES</span><span class="logo-id">.ID</span></h3>
+                        <p>Menciptakan website dengan jiwa, karakter, dan getaran positif khas Indonesia.</p>
+                        <div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4>Tautan Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about-company">Tentang</a></li>
+                        <li><a href="#meaning">Makna</a></li>
+                        <li><a href="#vision-mission">Visi & Misi</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#discount">Promo</a></li>
+                        <li><a href="#guarantee">Garansi</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4>Berlangganan</h4>
+                    <p>Dapatkan tips dan informasi terbaru</p>
+                    <div class="newsletter">
+                        <input type="email" id="newsletterEmail" placeholder="Email Anda">
+                        <button id="newsletterBtn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> WEBVIBES.ID | Technology Indonesia (T.ID) | Bangga Produk Indonesia <i class="fas fa-heart"></i></p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6287824815854" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
+    <!-- Floating Social Buttons -->
+    <a href="https://wa.me/6287824815854" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Chat WhatsApp</span>
     </a>
-
-    <!-- Instagram Float Button -->
-    <a href="https://www.instagram.com/webvibesid?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="instagram-float" target="_blank" aria-label="Follow us on Instagram">
+    <a href="https://www.instagram.com/webvibesid" class="float-ig" target="_blank">
         <i class="fab fa-instagram"></i>
+        <span class="tooltip">Follow Instagram</span>
     </a>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top btn btn-primary">
+    <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Hidden Audio Element -->
-    <audio id="hidden-audio-player" preload="auto" loop>
-        <source src="audio/Synth Solo - Versace on the floor  Bruno Mars.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
-    </audio>
-
-    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

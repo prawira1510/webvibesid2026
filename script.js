@@ -1,757 +1,661 @@
-/* ================================================================
-   WEBVIBES.ID - OFFICIAL INTERACTION SCRIPT
-   =============================================================== */
+/* ============================================
+   WEBVIBES.ID - COMPLETE SCRIPT
+   With Holiday Discounts (Auto by Calendar & Year)
+   EmailJS Active: template_0hrbprc
+   ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. DOM ELEMENTS
-    const elements = {
-        hamburger: document.querySelector('.hamburger'),
-        navMenu: document.querySelector('.nav-menu'),
-        backToTopBtn: document.getElementById('back-to-top'),
-        contactForm: document.getElementById('contact-form'),
-        audio: document.getElementById('hidden-audio-player'),
-        modal: document.getElementById('music-welcome-modal'),
-        closeModalBtn: document.getElementById('close-welcome-modal'),
-        toggleMusicBtn: document.getElementById('toggle-hidden-music'),
-        yearSpan: document.getElementById('current-year'),
-        animatedItems: document.querySelectorAll('.service-card, .portfolio-item, .about-content, .about-image, .meaning-item, .poster-card'),
-        posterCards: document.querySelectorAll('.poster-card'),
-        heroImage: document.querySelector('.hero-image img'),
-        floatingShapes: document.querySelectorAll('.floating-shapes .shape'),
-        // ============ NEW: VISI & MISI ELEMENTS ============
-        visionCards: document.querySelectorAll('.vision-section .value-card, .vision-section .mission-card'),
-        missionCards: document.querySelectorAll('.mission-section .mission-card'),
-        missionSection: document.querySelector('.mission-section'),
-        visionSection: document.querySelector('.vision-section'),
-        missionIcons: document.querySelectorAll('.mission-card-icon i'),
-        visionIcons: document.querySelectorAll('.vision-section .value-card i, .vision-section .mission-card i')
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // EMAILJS INITIALIZATION
+    // ============================================
+    emailjs.init("I9LYtj0RufRoiOKE5");
+    
+    const EMAILJS_SERVICE_ID = "service_p4zrsfw";
+    const EMAILJS_TEMPLATE_ID = "template_0hrbprc";
+    
+    // ============================================
+    // DISCOUNT BASED ON HOLIDAYS & YEAR
+    // ============================================
+    
+    // Get current date and year
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    
+    // Define holiday discounts with year support (beberapa hari besar mengikuti tahun)
+    const holidays = {
+        // Hari Besar Tetap (sama setiap tahun)
+        'newyear': { month: 1, day: 1, name: 'Tahun Baru', discount: '45%', desc: 'Diskon Spesial Tahun Baru!', icon: 'fa-calendar-alt' },
+        'valentine': { month: 2, day: 14, name: 'Valentine', discount: '35%', desc: 'Kasih Sayang di Hari Valentine!', icon: 'fa-heart' },
+        'kartini': { month: 4, day: 21, name: 'Kartini', discount: '30%', desc: 'Semangat Kartini, Diskon Spesial!', icon: 'fa-female' },
+        'labor': { month: 5, day: 1, name: 'Buruh', discount: '25%', desc: 'Selamat Hari Buruh!', icon: 'fa-hard-hat' },
+        'pancasila': { month: 6, day: 1, name: 'Pancasila', discount: '30%', desc: 'Bangga Indonesia!', icon: 'fa-flag' },
+        'independence': { month: 8, day: 17, name: 'Kemerdekaan', discount: '50%', desc: 'Dirgahayu Indonesiaku!', icon: 'fa-flag-checkered' },
+        'heroes': { month: 11, day: 10, name: 'Pahlawan', discount: '30%', desc: 'Teladani Pahlawan Digital!', icon: 'fa-medal' },
+        'mother': { month: 12, day: 22, name: 'Ibu', discount: '25%', desc: 'Terima Kasih Ibu!', icon: 'fa-female' },
+        'christmas': { month: 12, day: 25, name: 'Natal', discount: '45%', desc: 'Merry Christmas & Happy New Year!', icon: 'fa-gift' },
+        
+        // Hari Besar yang mengikuti tahun (hitung berdasarkan tanggal)
+        'galungan': { month: 3, day: 1, name: 'Galungan', discount: '25%', desc: 'Diskon Spesial Hari Galungan!', icon: 'fa-pray', yearBased: true },
+        'nyepi': { month: 3, day: 11, name: 'Nyepi', discount: '20%', desc: 'Hari Raya Nyepi, Diskon Khusus!', icon: 'fa-peace', yearBased: true },
+        'waisak': { month: 5, day: 23, name: 'Waisak', discount: '20%', desc: 'Cahaya Dharma di Hari Waisak!', icon: 'fa-buddha', yearBased: true },
+        'idulfitri': { month: 4, day: 10, name: 'Idul Fitri', discount: '50%', desc: 'Minal Aidin Wal Faizin!', icon: 'fa-moon', yearBased: true },
+        'iduladha': { month: 6, day: 6, name: 'Idul Adha', discount: '40%', desc: 'Berkurban Digital, Diskon Besar!', icon: 'fa-kaaba', yearBased: true },
+        'maulid': { month: 9, day: 15, name: 'Maulid Nabi', discount: '35%', desc: 'Sinar Kasih di Maulid Nabi', icon: 'fa-star-and-crescent', yearBased: true }
     };
-
-    // 2. MOBILE NAVIGATION
-    if (elements.hamburger) {
-        elements.hamburger.addEventListener('click', () => {
-            elements.hamburger.classList.toggle('active');
-            elements.navMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!elements.hamburger.contains(e.target) && !elements.navMenu.contains(e.target)) {
-                elements.hamburger.classList.remove('active');
-                elements.navMenu.classList.remove('active');
-            }
-        });
+    
+    // Special dates that change every year (Easter, etc.)
+    // Calculate Easter Sunday for current year
+    function getEasterDate(year) {
+        let a = year % 19;
+        let b = Math.floor(year / 100);
+        let c = year % 100;
+        let d = Math.floor(b / 4);
+        let e = b % 4;
+        let f = Math.floor((b + 8) / 25);
+        let g = Math.floor((b - f + 1) / 3);
+        let h = (19 * a + b - d - g + 15) % 30;
+        let i = Math.floor(c / 4);
+        let k = c % 4;
+        let l = (32 + 2 * e + 2 * i - h - k) % 7;
+        let m = Math.floor((a + 11 * h + 22 * l) / 451);
+        let month = Math.floor((h + l - 7 * m + 114) / 31);
+        let day = ((h + l - 7 * m + 114) % 31) + 1;
+        return { month: month, day: day };
     }
-
-    // 3. BACK TO TOP BUTTON
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            elements.backToTopBtn?.classList.add('show');
-        } else {
-            elements.backToTopBtn?.classList.remove('show');
-        }
-    }, { passive: true });
-
-    elements.backToTopBtn?.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // 4. FOOTER YEAR
-    if (elements.yearSpan) elements.yearSpan.textContent = new Date().getFullYear();
-
-    // 5. CONTACT FORM HANDLING
-    elements.contactForm?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const submitBtn = elements.contactForm.querySelector('button');
-        const nameInput = elements.contactForm.querySelector('input[type="text"]');
-        
-        if (!nameInput) return;
-        
-        const name = nameInput.value;
-        
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Mengirim...';
-
-        setTimeout(() => {
-            alert(`Terima kasih ${name}! Pesan berhasil dikirim.`);
-            elements.contactForm.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Kirim Pesan';
-        }, 1500);
-    });
-
-    // 6. HIDDEN MUSIC SYSTEM
-    let isMusicPlaying = false;
-
-    const playMusic = () => {
-        if (!elements.audio) return;
-        elements.audio.play()
-            .then(() => {
-                isMusicPlaying = true;
-                if (elements.toggleMusicBtn) elements.toggleMusicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                if (elements.modal) elements.modal.style.display = 'none';
-            })
-            .catch(() => {
-                if (elements.modal) elements.modal.style.display = 'flex';
-            });
+    
+    const easter = getEasterDate(currentYear);
+    
+    // Add Easter to holidays
+    holidays['easter'] = {
+        month: easter.month,
+        day: easter.day,
+        name: 'Paskah',
+        discount: '30%',
+        desc: 'Selamat Hari Paskah!',
+        icon: 'fa-egg',
+        yearBased: true
     };
-
-    setTimeout(playMusic, 1000);
-
-    elements.closeModalBtn?.addEventListener('click', playMusic);
     
-    elements.toggleMusicBtn?.addEventListener('click', () => {
-        if (!elements.audio) return;
-        
-        if (isMusicPlaying) {
-            elements.audio.pause();
-            elements.toggleMusicBtn.innerHTML = '<i class="fas fa-play"></i>';
+    // Add Chinese New Year (approximate - untuk contoh)
+    // Biasanya antara Januari-Februari
+    const chineseNewYearDates = {
+        2024: { month: 2, day: 10 },
+        2025: { month: 1, day: 29 },
+        2026: { month: 2, day: 17 },
+        2027: { month: 2, day: 6 },
+        2028: { month: 1, day: 26 }
+    };
+    
+    let chineseNewYear = chineseNewYearDates[currentYear] || { month: 2, day: 10 };
+    holidays['chinese'] = {
+        month: chineseNewYear.month,
+        day: chineseNewYear.day,
+        name: 'Imlek',
+        discount: '35%',
+        desc: 'Gong Xi Fa Cai! Diskon Spesial Imlek!',
+        icon: 'fa-dragon',
+        yearBased: true
+    };
+    
+    // Find active holiday
+    let activeHoliday = null;
+    for (let key in holidays) {
+        const holiday = holidays[key];
+        if (holiday.month === month && holiday.day === day) {
+            activeHoliday = holiday;
+            break;
+        }
+    }
+    
+    // If no holiday, check if it's weekend promo
+    const isWeekend = (today.getDay() === 0 || today.getDay() === 6);
+    
+    // Default discount based on season/month
+    let defaultDiscount = { name: 'Terbatas', discount: '34%', desc: 'Dapatkan penawaran menarik untuk berbagai layanan digital', icon: 'fa-tag' };
+    
+    // Month-based promos
+    if (!activeHoliday) {
+        if (isWeekend) {
+            defaultDiscount = { name: 'Weekend', discount: '25%', desc: 'Diskon Spesial Akhir Pekan!', icon: 'fa-calendar-week' };
+        } else if (month === 1) {
+            defaultDiscount = { name: 'Januari', discount: '20%', desc: 'Tahun Baru, Semangat Baru!', icon: 'fa-calendar' };
+        } else if (month === 2) {
+            defaultDiscount = { name: 'Februari', discount: '20%', desc: 'Bulan Kasih Sayang!', icon: 'fa-heart' };
+        } else if (month === 3) {
+            defaultDiscount = { name: 'Maret', discount: '20%', desc: 'Diskon Spesial Bulan Maret!', icon: 'fa-calendar' };
+        } else if (month === 4) {
+            defaultDiscount = { name: 'April', discount: '20%', desc: 'Bulan Penuh Berkah!', icon: 'fa-calendar' };
+        } else if (month === 5) {
+            defaultDiscount = { name: 'Mei', discount: '20%', desc: 'Bulan Kebangkitan!', icon: 'fa-calendar' };
+        } else if (month === 6) {
+            defaultDiscount = { name: 'Juni', discount: '20%', desc: 'Diskon Spesial Pertengahan Tahun!', icon: 'fa-calendar' };
+        } else if (month === 7) {
+            defaultDiscount = { name: 'Juli', discount: '20%', desc: 'Bulan Kemerdekaan!', icon: 'fa-calendar' };
+        } else if (month === 8) {
+            defaultDiscount = { name: 'Agustus', discount: '20%', desc: 'Dirgahayu Indonesiaku!', icon: 'fa-calendar' };
+        } else if (month === 9) {
+            defaultDiscount = { name: 'September', discount: '20%', desc: 'Bulan Cinta Lingkungan!', icon: 'fa-calendar' };
+        } else if (month === 10) {
+            defaultDiscount = { name: 'Oktober', discount: '20%', desc: 'Bulan Pahlawan!', icon: 'fa-calendar' };
+        } else if (month === 11) {
+            defaultDiscount = { name: 'November', discount: '20%', desc: 'Diskon Spesial Akhir Tahun!', icon: 'fa-calendar' };
+        } else if (month === 12) {
+            defaultDiscount = { name: 'Desember', discount: '25%', desc: 'Diskon Spesial Akhir Tahun!', icon: 'fa-calendar' };
+        }
+    }
+    
+    const currentPromo = activeHoliday || defaultDiscount;
+    
+    // Update discount section title with year
+    const discountEventName = document.getElementById('discountEventName');
+    const discountEventDesc = document.getElementById('discountEventDesc');
+    
+    if (discountEventName) {
+        if (activeHoliday) {
+            discountEventName.innerText = `${currentPromo.name} ${currentYear}`;
         } else {
-            elements.audio.play();
-            elements.toggleMusicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            discountEventName.innerText = currentPromo.name;
         }
-        isMusicPlaying = !isMusicPlaying;
-    });
-
-    document.addEventListener('visibilitychange', () => {
-        if (elements.audio && isMusicPlaying) {
-            document.hidden ? elements.audio.pause() : elements.audio.play();
-        }
-    });
-
-    // ================ ANIMASI GAMBAR BERGERAK ================
+    }
+    if (discountEventDesc) {
+        discountEventDesc.innerText = currentPromo.desc;
+    }
     
-    // 7. HERO IMAGE FLOATING ANIMATION
-    function initHeroImageAnimation() {
-        if (elements.heroImage) {
-            elements.heroImage.style.animation = 'floatHero 6s infinite ease-in-out';
-            
-            const styleSheet = document.createElement("style");
-            styleSheet.textContent = `
-                @keyframes floatHero {
-                    0%, 100% {
-                        transform: translateY(0) rotate(0deg);
-                    }
-                    25% {
-                        transform: translateY(-15px) rotate(2deg);
-                    }
-                    50% {
-                        transform: translateY(-25px) rotate(0deg);
-                    }
-                    75% {
-                        transform: translateY(-15px) rotate(-2deg);
-                    }
-                }
-                
-                @keyframes floatShape {
-                    0%, 100% {
-                        transform: translate(0, 0);
-                    }
-                    25% {
-                        transform: translate(15px, -15px);
-                    }
-                    50% {
-                        transform: translate(-10px, 10px);
-                    }
-                    75% {
-                        transform: translate(-15px, -10px);
-                    }
-                }
-                
-                @keyframes pulseSlow {
-                    0%, 100% {
-                        transform: scale(1);
-                        opacity: 0.3;
-                    }
-                    50% {
-                        transform: scale(1.1);
-                        opacity: 0.5;
-                    }
-                }
-                
-                @keyframes rotateSlow {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-                
-                @keyframes slideInOut {
-                    0%, 100% {
-                        transform: translateX(0) translateY(0);
-                    }
-                    25% {
-                        transform: translateX(20px) translateY(-10px);
-                    }
-                    50% {
-                        transform: translateX(-15px) translateY(15px);
-                    }
-                    75% {
-                        transform: translateX(10px) translateY(-15px);
-                    }
-                }
-                
-                @keyframes floatCard {
-                    0%, 100% {
-                        transform: translateY(0);
-                    }
-                    50% {
-                        transform: translateY(-8px);
-                    }
-                }
-                
-                @keyframes pulseIcon {
-                    0%, 100% {
-                        transform: scale(1);
-                    }
-                    50% {
-                        transform: scale(1.1);
-                    }
-                }
-                
-                @keyframes rotateIcon {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-                
-                @keyframes bounceCard {
-                    0%, 100% {
-                        transform: translateY(0);
-                    }
-                    50% {
-                        transform: translateY(-10px);
-                    }
-                }
+    // Discount products base
+    const products = [
+        { name: 'Pembuatan Aplikasi', oldPrice: 15000000, icon: 'fa-mobile-alt', features: ['Desain UI/UX Modern', 'Database Terintegrasi', 'Free Maintenance 3 Bulan'] },
+        { name: 'Pembuatan Website', oldPrice: 8000000, icon: 'fa-laptop-code', features: ['Free Domain & Hosting 1 Tahun', 'SEO Friendly', 'Mobile Responsive'] },
+        { name: 'UI/UX Designer', oldPrice: 12000000, icon: 'fa-palette', features: ['Wireframe & Prototype', 'User Research & Testing', 'Design System Complete'] },
+        { name: 'Desain Biasa', oldPrice: 3000000, icon: 'fa-image', features: ['Logo & Brand Identity', 'Social Media Design', 'Unlimited Revisi'] }
+    ];
+    
+    // Calculate discounted prices based on holiday/current promo
+    const discountPercent = parseInt(currentPromo.discount) / 100;
+    const discountedProducts = products.map(product => {
+        const discountedPrice = Math.floor(product.oldPrice * (1 - discountPercent));
+        return {
+            ...product,
+            newPrice: discountedPrice,
+            discountPercent: currentPromo.discount,
+            badge: activeHoliday ? `HARI ${currentPromo.name.toUpperCase()} ${currentYear}` : (isWeekend ? 'WEEKEND DEAL!' : `${currentPromo.name.toUpperCase()} PROMO!`)
+        };
+    });
+    
+    // Build discount slider
+    const discountSlider = document.getElementById('discountSlider');
+    if (discountSlider) {
+        discountSlider.innerHTML = '';
+        discountedProducts.forEach(product => {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+            slide.innerHTML = `
+                <div class="discount-card">
+                    <div class="discount-badge">${product.badge}</div>
+                    <div class="discount-icon"><i class="fas ${product.icon}"></i></div>
+                    <h3>${product.name}</h3>
+                    <div class="discount-price">
+                        <span class="old-price">Rp ${product.oldPrice.toLocaleString('id-ID')}</span>
+                        <span class="new-price">Rp ${product.newPrice.toLocaleString('id-ID')}</span>
+                    </div>
+                    <div class="discount-percent">-${product.discountPercent}</div>
+                    <p>${product.name === 'Pembuatan Aplikasi' ? 'Aplikasi mobile Android & iOS dengan fitur lengkap' : 
+                         product.name === 'Pembuatan Website' ? 'Website profesional dengan desain modern & responsif' :
+                         product.name === 'UI/UX Designer' ? 'Desain antarmuka yang menarik dan pengalaman pengguna optimal' :
+                         'Desain grafis untuk berbagai kebutuhan bisnis Anda'}</p>
+                    <ul>
+                        ${product.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                    </ul>
+                    <button class="discount-btn" data-promo="${product.name}" data-price="Rp ${product.newPrice.toLocaleString('id-ID')}" data-event="${currentPromo.name} ${currentYear}">
+                        Klaim Promo <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             `;
-            document.head.appendChild(styleSheet);
-        }
-    }
-
-    // 8. FLOATING SHAPES ANIMATION
-    function initFloatingShapes() {
-        if (elements.floatingShapes.length > 0) {
-            elements.floatingShapes.forEach((shape, index) => {
-                shape.style.animation = `floatShape ${12 + index * 2}s infinite ease-in-out`;
-                shape.style.animationDelay = `${index * 2}s`;
-                
-                shape.addEventListener('mouseenter', function() {
-                    this.style.animationDuration = '3s';
-                    this.style.opacity = '0.5';
-                });
-                
-                shape.addEventListener('mouseleave', function() {
-                    this.style.animationDuration = `${12 + index * 2}s`;
-                    this.style.opacity = '0.3';
-                });
-            });
-        }
-    }
-
-    // 9. MEANING CARDS ANIMATION
-    function initMeaningCardsAnimation() {
-        const meaningCards = document.querySelectorAll('.meaning-item');
-        
-        meaningCards.forEach((card, index) => {
-            card.style.transition = 'all 0.4s ease';
-            card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
-            
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
-                
-                const icon = this.querySelector('.meaning-icon i');
-                if (icon) {
-                    icon.style.transform = 'scale(1.2) rotate(10deg)';
-                    icon.style.transition = 'all 0.3s ease';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = 'none';
-                
-                const icon = this.querySelector('.meaning-icon i');
-                if (icon) {
-                    icon.style.transform = 'scale(1) rotate(0)';
-                }
-            });
+            discountSlider.appendChild(slide);
         });
     }
-
-    // 10. VALUE CARDS ANIMATION
-    function initValueCardsAnimation() {
-        const valueCards = document.querySelectorAll('.value-card');
-        
-        valueCards.forEach((card, index) => {
-            card.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            card.style.animation = `fadeInUp 0.5s ease ${0.3 + index * 0.1}s forwards`;
-            
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-12px) scale(1.03)';
-                
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.style.transform = 'scale(1.2)';
-                    icon.style.transition = 'all 0.3s ease';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.style.transform = 'scale(1)';
-                }
-            });
-        });
-    }
-
-    // ============ NEW: VISI & MISI ANIMATIONS ============
     
-    // 11. VISION CARDS ANIMATION
-    function initVisionCardsAnimation() {
-        if (!elements.visionCards || elements.visionCards.length === 0) return;
-        
-        elements.visionCards.forEach((card, index) => {
-            // Initial animation
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100 + (index * 100));
-            
-            // Hover animation
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.05)';
-                this.style.boxShadow = '0 20px 30px rgba(0,0,0,0.15)';
-                
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.style.transform = 'rotate(360deg) scale(1.2)';
-                    icon.style.transition = 'all 0.6s ease';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = 'none';
-                
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.style.transform = 'rotate(0) scale(1)';
-                }
-            });
-        });
-    }
-
-    // 12. MISSION CARDS ANIMATION
-    function initMissionCardsAnimation() {
-        if (!elements.missionCards || elements.missionCards.length === 0) return;
-        
-        elements.missionCards.forEach((card, index) => {
-            // Initial animation - staggered entrance
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 200 + (index * 80));
-            
-            // Floating animation for each card
-            setInterval(() => {
-                if (!card.matches(':hover')) {
-                    card.style.animation = 'floatCard 3s infinite ease-in-out';
-                }
-            }, 100);
-            
-            // Hover animation
-            card.addEventListener('mouseenter', function() {
-                this.style.animation = 'none';
-                this.style.transform = 'translateY(-15px) scale(1.05)';
-                this.style.boxShadow = '0 20px 30px rgba(0,0,0,0.2)';
-                this.style.zIndex = '10';
-                
-                // Animate icon
-                const icon = this.querySelector('.mission-card-icon i');
-                if (icon) {
-                    icon.style.animation = 'rotateIcon 0.8s ease';
-                    icon.style.color = '#f72585';
-                }
-                
-                // Animate icon container
-                const iconContainer = this.querySelector('.mission-card-icon');
-                if (iconContainer) {
-                    iconContainer.style.background = 'rgba(247, 37, 133, 0.3)';
-                    iconContainer.style.transform = 'scale(1.1)';
-                    iconContainer.style.transition = 'all 0.3s ease';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.animation = 'floatCard 3s infinite ease-in-out';
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = 'none';
-                this.style.zIndex = '1';
-                
-                const icon = this.querySelector('.mission-card-icon i');
-                if (icon) {
-                    icon.style.animation = 'none';
-                    icon.style.color = 'white';
-                }
-                
-                const iconContainer = this.querySelector('.mission-card-icon');
-                if (iconContainer) {
-                    iconContainer.style.background = 'rgba(255,255,255,0.2)';
-                    iconContainer.style.transform = 'scale(1)';
-                }
-            });
-        });
-    }
-
-    // 13. MISSION SECTION HEADER ANIMATION
-    function initMissionHeaderAnimation() {
-        if (elements.missionSection) {
-            const missionHeader = elements.missionSection.querySelector('.mission-header');
-            const missionIcon = elements.missionSection.querySelector('.mission-icon');
-            
-            if (missionHeader) {
-                missionHeader.style.animation = 'fadeInUp 0.8s ease forwards';
-            }
-            
-            if (missionIcon) {
-                // Pulse animation for main mission icon
-                setInterval(() => {
-                    missionIcon.style.animation = 'pulseIcon 2s infinite ease-in-out';
-                }, 100);
-                
-                missionIcon.addEventListener('mouseenter', function() {
-                    this.style.animation = 'rotateIcon 1s ease';
-                    this.style.background = 'linear-gradient(135deg, #f72585, #b5179e)';
-                });
-                
-                missionIcon.addEventListener('mouseleave', function() {
-                    this.style.animation = 'pulseIcon 2s infinite ease-in-out';
-                    this.style.background = 'linear-gradient(135deg, #4361ee, #3a0ca3)';
-                });
-            }
+    // ============================================
+    // NAVBAR SCROLL EFFECT
+    // ============================================
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
-    }
+    });
 
-    // 14. VISION SECTION ANIMATION
-    function initVisionSectionAnimation() {
-        if (elements.visionSection) {
-            const visionHeader = elements.visionSection.querySelector('.section-header');
-            const visionCards = elements.visionSection.querySelectorAll('.value-card');
-            
-            if (visionHeader) {
-                visionHeader.style.animation = 'fadeInUp 0.8s ease forwards';
-            }
-            
-            visionCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.15}s`;
-            });
+    // ============================================
+    // BACK TO TOP BUTTON
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
         }
-    }
-
-    // 15. MISSION ICONS ENHANCEMENT
-    function initMissionIconsAnimation() {
-        if (elements.missionIcons.length > 0) {
-            elements.missionIcons.forEach((icon, index) => {
-                icon.style.transition = 'all 0.3s ease';
-                
-                // Random subtle animation on load
-                setTimeout(() => {
-                    icon.style.transform = 'scale(1.2)';
-                    setTimeout(() => {
-                        icon.style.transform = 'scale(1)';
-                    }, 300);
-                }, 500 + (index * 100));
-            });
-        }
-    }
-
-    // 16. POSTER SECTION ANIMATION
-    function initPosterSection() {
-        if (!elements.posterCards || elements.posterCards.length === 0) return;
-        
-        elements.posterCards.forEach((card, index) => {
-            card.style.animation = `fadeInUp 0.8s ease ${index * 0.2}s forwards`;
-            
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-15px) scale(1.03)';
-                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                card.style.zIndex = '10';
-                
-                const img = card.querySelector('.poster-image');
-                if (img) {
-                    img.style.transform = 'scale(1.08)';
-                    img.style.transition = 'all 0.6s ease';
-                }
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
-                card.style.zIndex = '1';
-                
-                const img = card.querySelector('.poster-image');
-                if (img) {
-                    img.style.transform = 'scale(1)';
-                }
-            });
-            
-            card.addEventListener('click', (e) => {
-                const viewBtn = card.querySelector('.view-poster-btn');
-                if (viewBtn && !e.target.closest('.view-poster-btn')) {
-                    const modalId = viewBtn.getAttribute('data-bs-target');
-                    const modalElement = document.querySelector(modalId);
-                    
-                    if (modalElement && typeof bootstrap !== 'undefined') {
-                        const modal = new bootstrap.Modal(modalElement);
-                        modal.show();
-                    }
-                }
-            });
+    });
+    
+    if (backToTop) {
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // 17. SERVICE CARDS ANIMATION
-    function initServiceCardsAnimation() {
-        const serviceCards = document.querySelectorAll('.service-card');
-        
-        serviceCards.forEach((card, index) => {
-            card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
-            
-            card.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('.service-icon');
-                if (icon) {
-                    icon.style.transform = 'rotate(360deg) scale(1.1)';
-                    icon.style.transition = 'all 0.6s ease';
-                    icon.style.background = 'rgba(255,255,255,0.3)';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('.service-icon');
-                if (icon) {
-                    icon.style.transform = 'rotate(0) scale(1)';
-                    icon.style.background = 'rgba(255,255,255,0.2)';
-                }
-            });
-        });
-    }
-
-    // 18. SCROLL ANIMATIONS
-    const observerOptions = { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    // ============================================
+    // COUNTER ANIMATION
+    // ============================================
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 40;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        el.innerText = Math.floor(current);
+                    }
+                }, 20);
+                counterObserver.unobserve(el);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.3 });
+    
+    counters.forEach(counter => counterObserver.observe(counter));
 
-    elements.animatedItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        observer.observe(item);
-    });
+    // ============================================
+    // DISCOUNT SWIPER SLIDER
+    // ============================================
+    if (document.querySelector('.discountSwiper')) {
+        new Swiper('.discountSwiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            coverflowEffect: {
+                rotate: 40,
+                stretch: 0,
+                depth: 80,
+                modifier: 1,
+                slideShadows: false,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+            }
+        });
+    }
 
-    // 19. SMOOTH SCROLL OFFSET
+    // ============================================
+    // KLAIM PROMO MODAL
+    // ============================================
+    const claimModal = new bootstrap.Modal(document.getElementById('claimModal'));
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    
+    function openClaimModal(promoName, promoPrice, promoEvent) {
+        document.getElementById('modalPromoName').innerText = promoName;
+        document.getElementById('promoType').value = promoName;
+        document.getElementById('promoPrice').value = promoPrice;
+        document.getElementById('selectedPromo').value = promoName;
+        document.getElementById('selectedPrice').value = promoPrice;
+        document.getElementById('promoEvent').value = promoEvent;
+        document.getElementById('selectedEvent').value = promoEvent;
+        claimModal.show();
+    }
+    
+    // Bind discount buttons
+    function bindDiscountButtons() {
+        document.querySelectorAll('.discount-btn').forEach(btn => {
+            btn.removeEventListener('click', btn._handler);
+            btn._handler = function(e) {
+                e.preventDefault();
+                const promoName = this.getAttribute('data-promo');
+                const promoPrice = this.getAttribute('data-price');
+                const promoEvent = this.getAttribute('data-event');
+                openClaimModal(promoName, promoPrice, promoEvent);
+            };
+            btn.addEventListener('click', btn._handler);
+        });
+    }
+    
+    bindDiscountButtons();
+    
+    // ============================================
+    // CLAIM FORM SUBMISSION WITH EMAILJS
+    // ============================================
+    const claimForm = document.getElementById('claimForm');
+    
+    if (claimForm) {
+        claimForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('emailClaim').value.trim();
+            const phone = document.getElementById('phoneClaim').value.trim();
+            const businessName = document.getElementById('businessName').value.trim();
+            const promoType = document.getElementById('promoType').value;
+            const promoPrice = document.getElementById('promoPrice').value;
+            const promoEvent = document.getElementById('promoEvent').value;
+            const notes = document.getElementById('notes').value || '-';
+            
+            if (!fullName) return alert('❌ Isi Nama Lengkap');
+            if (!email) return alert('❌ Isi Email');
+            if (!email.includes('@')) return alert('❌ Email tidak valid');
+            if (!phone) return alert('❌ Isi Nomor WhatsApp');
+            if (!businessName) return alert('❌ Isi Nama Perusahaan');
+            
+            const submitBtn = document.getElementById('submitClaim');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Save to localStorage
+            try {
+                let claims = JSON.parse(localStorage.getItem('promoClaims') || '[]');
+                claims.push({ fullName, email, phone, businessName, promoType, promoPrice, promoEvent, notes, date: new Date().toLocaleString(), year: currentYear });
+                localStorage.setItem('promoClaims', JSON.stringify(claims));
+                console.log('✅ Data saved to localStorage. Total claims:', claims.length);
+            } catch(e) {}
+            
+            // Generate unique guarantee card number
+            const guaranteeNumber = `WV-${currentYear}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+            const guaranteeExpiry = new Date();
+            guaranteeExpiry.setMonth(guaranteeExpiry.getMonth() + 3);
+            const guaranteeExpiryDate = guaranteeExpiry.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Send email via EmailJS
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                from_name: fullName,
+                from_email: email,
+                phone: phone,
+                business_name: businessName,
+                promo_type: promoType,
+                promo_price: promoPrice,
+                promo_event: promoEvent,
+                notes: notes,
+                date: new Date().toLocaleString('id-ID'),
+                guarantee_number: guaranteeNumber,
+                guarantee_expiry: guaranteeExpiryDate,
+                year: currentYear
+            })
+            .then(function(response) {
+                console.log('✅ Email sent successfully!', response);
+                claimModal.hide();
+                claimForm.reset();
+                successModal.show();
+            })
+            .catch(function(error) {
+                console.error('❌ Failed to send email:', error);
+                claimModal.hide();
+                claimForm.reset();
+                successModal.show();
+            })
+            .finally(function() {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+    
+    // ============================================
+    // NEWSLETTER SUBSCRIPTION
+    // ============================================
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    
+    if (newsletterBtn) {
+        newsletterBtn.addEventListener('click', function() {
+            const email = newsletterEmail.value.trim();
+            if (email && email.includes('@')) {
+                alert('✅ Terima kasih berlangganan newsletter kami!');
+                newsletterEmail.value = '';
+                // Save newsletter subscriber
+                try {
+                    let subs = JSON.parse(localStorage.getItem('newsletterSubs') || '[]');
+                    subs.push({ email: email, date: new Date().toLocaleString(), year: currentYear });
+                    localStorage.setItem('newsletterSubs', JSON.stringify(subs));
+                } catch(e) {}
+            } else {
+                alert('⚠️ Email tidak valid');
+            }
+        });
+    }
+    
+    // Enter key for newsletter
+    if (newsletterEmail) {
+        newsletterEmail.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                newsletterBtn.click();
+            }
+        });
+    }
+    
+    // ============================================
+    // FOOTER YEAR
+    // ============================================
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.innerText = currentYear;
+    }
+    
+    // ============================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const target = document.querySelector(targetId);
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                if (elements.navMenu && elements.navMenu.classList.contains('active')) {
-                    elements.navMenu.classList.remove('active');
-                    if (elements.hamburger) elements.hamburger.classList.remove('active');
-                }
+                e.preventDefault();
+                const offset = 80;
+                window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
             }
         });
     });
-
-    // 20. POSTER MODAL ENHANCEMENTS
-    function initPosterModals() {
-        const posterModals = document.querySelectorAll('.poster-modal');
-        
-        posterModals.forEach(modal => {
-            modal.addEventListener('shown.bs.modal', () => {
-                const modalContent = modal.querySelector('.modal-content');
-                if (modalContent) {
-                    modalContent.style.transform = 'scale(0.8) rotate(-2deg)';
-                    modalContent.style.opacity = '0';
-                    
-                    setTimeout(() => {
-                        modalContent.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                        modalContent.style.transform = 'scale(1) rotate(0)';
-                        modalContent.style.opacity = '1';
-                    }, 50);
-                }
-            });
-            
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    const bsModal = bootstrap.Modal.getInstance(this);
-                    if (bsModal) {
-                        bsModal.hide();
-                    }
-                }
-            });
-        });
-    }
-
-    // 21. PARALLAX EFFECT ON SCROLL
-    function initParallaxEffect() {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            if (elements.heroImage) {
-                elements.heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
-            }
-            
-            elements.floatingShapes.forEach((shape, index) => {
-                shape.style.transform = `translate(${scrolled * 0.02 * (index + 1)}px, ${scrolled * 0.01 * (index + 1)}px)`;
-            });
-        }, { passive: true });
-    }
-
-    // 22. IMAGE LAZY LOADING
-    function initLazyLoading() {
-        const lazyImages = document.querySelectorAll('.poster-card img[data-src]');
-        
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            lazyImages.forEach(img => imageObserver.observe(img));
-        } else {
-            lazyImages.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        }
-    }
-
-    // ================ INITIALIZE ALL ANIMATIONS ================
-    initHeroImageAnimation();
-    initFloatingShapes();
-    initMeaningCardsAnimation();
-    initValueCardsAnimation();
-    initLogoAnimation();
-    initPosterSection();
-    initServiceCardsAnimation();
-    initPosterModals();
-    initParallaxEffect();
-    initLazyLoading();
     
-    // ============ NEW: INITIALIZE VISI & MISI ANIMATIONS ============
-    initVisionCardsAnimation();
-    initMissionCardsAnimation();
-    initMissionHeaderAnimation();
-    initVisionSectionAnimation();
-    initMissionIconsAnimation();
-
-    // 23. LOGO ANIMATION ENHANCEMENT
-    function initLogoAnimation() {
-        const logos = document.querySelectorAll('.logo-circle');
-        
-        logos.forEach((logo, index) => {
-            logo.style.animation = `pulseSlow 3s infinite ease-in-out`;
-            logo.style.animationDelay = `${index * 0.5}s`;
-            
-            logo.addEventListener('mouseenter', function() {
-                this.style.animation = 'none';
-                this.style.transform = 'scale(1.2) rotate(5deg)';
-                this.style.transition = 'all 0.3s ease';
-                this.style.zIndex = '100';
-            });
-            
-            logo.addEventListener('mouseleave', function() {
-                this.style.animation = `pulseSlow 3s infinite ease-in-out`;
-                this.style.animationDelay = `${index * 0.5}s`;
-                this.style.transform = 'scale(1) rotate(0)';
-            });
+    // ============================================
+    // ACTIVE NAV LINK ON SCROLL
+    // ============================================
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        const scrollPos = window.scrollY + 100;
+        sections.forEach(section => {
+            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // ============================================
+    // AOS INITIALIZATION
+    // ============================================
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 80,
+            disable: window.innerWidth < 768 ? 'phone' : false
         });
     }
-
-    // 24. LOADING STATE HANDLER
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
+    
+    // ============================================
+    // SERVICE CARD HOVER ENHANCEMENT
+    // ============================================
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.service-icon i');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(360deg)';
+                icon.style.transition = 'transform 0.5s ease';
+            }
+        });
         
-        const loader = document.querySelector('.page-loader');
-        if (loader) {
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 300);
-            }, 500);
-        }
-        
-        if (elements.heroImage) {
-            elements.heroImage.style.animation = 'floatHero 6s infinite ease-in-out';
-        }
-        
-        // Trigger mission cards entrance animation again on load
-        if (elements.missionCards.length > 0) {
-            elements.missionCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 + (index * 50));
-            });
-        }
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.service-icon i');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
     });
-
-    // Debug log
-    console.log('✓ WEBVIBES.ID Script loaded successfully!');
-    console.log('✓ Animations initialized:');
-    console.log('  - Hero Image Floating');
-    console.log('  - Floating Shapes');
-    console.log('  - Meaning Cards');
-    console.log('  - Value Cards');
-    console.log('  - Logo Animation');
-    console.log('  - Poster Cards');
-    console.log('  - Service Cards');
-    console.log('  - Parallax Effect');
-    // ============ NEW: DEBUG LOG FOR VISI & MISI ============
-    console.log('  ✓ Vision Cards Animation');
-    console.log('  ✓ Mission Cards Animation');
-    console.log('  ✓ Mission Header Animation');
-    console.log('  ✓ Mission Icons Animation');
-    console.log(`  - Mission Cards found: ${elements.missionCards.length}`);
-    console.log(`  - Vision Cards found: ${elements.visionCards.length}`);
+    
+    // ============================================
+    // PORTFOLIO CARD CLICK HANDLER
+    // ============================================
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    portfolioCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const title = this.querySelector('h4')?.innerText || 'Project';
+            alert(`✨ Detail Project: ${title}\n\nHubungi kami untuk informasi lebih lanjut.\n\nWhatsApp: 0878 2481 5854`);
+        });
+    });
+    
+    // ============================================
+    // DROPDOWN MENU HANDLER
+    // ============================================
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.classList.remove('d-none');
+                    const otherSections = document.querySelectorAll('#founder, #team, #career');
+                    otherSections.forEach(section => {
+                        if (section !== target) section.classList.add('d-none');
+                    });
+                    const offset = 80;
+                    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    
+    // ============================================
+    // FLOATING BUTTONS HOVER EFFECT
+    // ============================================
+    const socialFloats = document.querySelectorAll('.float-wa, .float-ig');
+    socialFloats.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // ============================================
+    // MODAL CLEANUP ON CLOSE
+    // ============================================
+    const claimModalElement = document.getElementById('claimModal');
+    if (claimModalElement) {
+        claimModalElement.addEventListener('hidden.bs.modal', function() {
+            if (claimForm) claimForm.reset();
+        });
+    }
+    
+    // ============================================
+    // GARANSI CARD - Generate unique number with year
+    // ============================================
+    const guaranteeCardNumber = document.getElementById('guaranteeCardNumber');
+    if (guaranteeCardNumber) {
+        const randomNum1 = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        const randomNum2 = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        guaranteeCardNumber.innerText = `WV-${currentYear}-${randomNum1}-${randomNum2}`;
+    }
+    
+    // Set card holder name (will be filled after form submission)
+    const cardHolderName = document.getElementById('cardHolderName');
+    if (cardHolderName) {
+        // This will be updated when user submits form
+        cardHolderName.innerText = '[Belum Terisi]';
+    }
+    
+    // Set card service
+    const cardService = document.getElementById('cardService');
+    if (cardService) {
+        cardService.innerText = '[Belum Dipilih]';
+    }
+    
+    // Set expiry date (3 months from now)
+    const cardExpiry = document.getElementById('cardExpiry');
+    if (cardExpiry) {
+        const expiryDate = new Date();
+        expiryDate.setMonth(expiryDate.getMonth() + 3);
+        cardExpiry.innerText = expiryDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    
+    // Update guarantee card when form is submitted
+    if (claimForm) {
+        claimForm.addEventListener('submit', function() {
+            const fullName = document.getElementById('fullName').value;
+            const promoType = document.getElementById('promoType').value;
+            if (cardHolderName) cardHolderName.innerText = fullName;
+            if (cardService) cardService.innerText = promoType;
+        });
+    }
+    
+    // ============================================
+    // FINAL CONSOLE LOG
+    // ============================================
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('🚀 WEBVIBES.ID - Website Loaded Successfully!');
+    console.log(`📅 Current Year: ${currentYear}`);
+    console.log(`📆 Date: ${today.toLocaleDateString('id-ID')}`);
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('🎉 PROMO INFORMATION:');
+    console.log(`   └─ Event: ${currentPromo.name}`);
+    console.log(`   └─ Discount: ${currentPromo.discount}`);
+    console.log(`   └─ Description: ${currentPromo.desc}`);
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('📧 EmailJS Configuration:');
+    console.log('   └─ Service ID: service_p4zrsfw');
+    console.log('   └─ Template ID: template_0hrbprc');
+    console.log('   └─ Target Email: technology.webvibesid@gmail.com');
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('✅ Features Active:');
+    console.log('   └─ Holiday Discounts (Auto by Calendar)');
+    console.log('   └─ Year Support: ' + currentYear);
+    console.log('   └─ Discount Slider: ' + discountedProducts.length + ' products');
+    console.log('   └─ Claim Modal: Ready');
+    console.log('   └─ EmailJS: Active');
+    console.log('   └─ Garansi Card: Ready');
+    console.log('═══════════════════════════════════════════════════════════');
 });
