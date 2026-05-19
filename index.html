@@ -11,9 +11,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -50,7 +47,7 @@
                     <li class="nav-item"><a class="nav-link" href="#vision-mission">Visi & Misi</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#discount">Promo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Paket Harga</a></li>
                     <li class="nav-item"><a class="nav-link" href="#guarantee">Garansi</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
                     <li class="nav-item dropdown">
@@ -61,7 +58,6 @@
                             <li><a class="dropdown-item" href="#career">Karir</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSfeAU5BdwrQlxouh40qFGIuFaaFgOQD8PY-bAfQzwOM1odkCw/viewform" target="_blank">Order Now</a></li>
                 </ul>
             </div>
         </div>
@@ -76,7 +72,7 @@
                     <h1 class="hero-title">Transformasi Digital untuk <span class="gradient-text">Bisnis Anda</span></h1>
                     <p class="hero-text">WEBVIBES.ID menciptakan website yang tidak hanya indah, tetapi juga fungsional, responsif, dan mendukung pertumbuhan bisnis Anda di era digital.</p>
                     <div class="hero-buttons">
-                        <a href="#discount" class="btn btn-primary">Lihat Promo <i class="fas fa-tag"></i></a>
+                        <a href="#pricing" class="btn btn-primary">Lihat Paket Harga <i class="fas fa-tag"></i></a>
                         <a href="#guarantee" class="btn btn-outline">Garansi Layanan <i class="fas fa-shield-alt"></i></a>
                     </div>
                     <div class="hero-stats">
@@ -295,24 +291,133 @@
         </div>
     </section>
 
-    <!-- Diskon Slider Section - Berdasarkan Hari Besar -->
-    <section id="discount" class="discount">
+    <!-- Paket Harga Section -->
+    <section id="pricing" class="pricing">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-tag">Promo Spesial</span>
-                <h2 class="section-title text-white">Diskon <span class="gradient-text" id="discountEventName">Terbatas</span></h2>
-                <p class="section-subtitle text-white-50" id="discountEventDesc">Dapatkan penawaran menarik untuk berbagai layanan digital</p>
+                <span class="section-tag">Paket Harga</span>
+                <h2 class="section-title">Pilihan <span class="gradient-text">Layanan</span></h2>
+                <p class="section-subtitle">Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
             </div>
-            <div class="swiper discountSwiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper" id="discountSlider">
-                    <!-- Slide akan diisi oleh JavaScript berdasarkan hari besar -->
+
+            <!-- Promo Banner -->
+            <div class="promo-banner" id="promoBanner">
+                <div class="promo-banner-content">
+                    <i class="fas fa-gift"></i>
+                    <span>🎉 PROMO BERLAKU! 🎉</span>
+                    <i class="fas fa-tag"></i>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- Paket Website, UI/UX, Aplikasi -->
+            <div class="pricing-category" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Website, UI/UX Designer, & Aplikasi</h3>
+                    <span class="discount-badge-category" id="websiteDiscountBadge">Diskon 15%</span>
+                </div>
+                <div class="row g-4" id="websitePricingContainer">
+                    <!-- Will be filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Paket Desain Biasa -->
+            <div class="pricing-category mt-5" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-palette"></i>
+                    <h3>Desain Biasa (Logo, Banner, Poster, dll)</h3>
+                    <span class="discount-badge-category" id="designDiscountBadge">Diskon 5%</span>
+                </div>
+                <div class="row g-4" id="designPricingContainer">
+                    <!-- Will be filled by JavaScript -->
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Pilih Paket -->
+    <div class="modal fade" id="pricingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pilih Paket <span id="modalPaketName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="pricingForm">
+                        <input type="hidden" id="paketType" name="paketType">
+                        <input type="hidden" id="paketPrice" name="paketPrice">
+                        <input type="hidden" id="paketOriginalPrice" name="paketOriginalPrice">
+                        <input type="hidden" id="paketDiscount" name="paketDiscount">
+                        <input type="hidden" id="selectedOriginalPrice" name="selectedOriginalPrice">
+                        <input type="hidden" id="selectedDiscount" name="selectedDiscount">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fullName" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="emailClaim" required placeholder="Masukkan email aktif Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nomor WhatsApp <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="phoneClaim" required placeholder="Contoh: 081234567890">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Nama Perusahaan/Bisnis/Sekolah <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="businessName" required placeholder="Nama perusahaan, bisnis, atau sekolah Anda">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Paket yang Dipilih</label>
+                            <input type="text" class="form-control" id="selectedPaket" readonly style="background: #f0f0f0;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Harga Paket</label>
+                            <input type="text" class="form-control" id="selectedPricePaket" readonly style="background: #f0f0f0;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Catatan (Jelaskan yang ingin dikerjakan) <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="notes" rows="3" required placeholder="Contoh: Saya ingin dibuatkan website toko online dengan fitur keranjang belanja..."></textarea>
+                        </div>
+                        
+                        <div class="alert alert-info small">
+                            <i class="fas fa-info-circle"></i> Data Anda akan kami proses. Tim kami akan menghubungi Anda via WhatsApp untuk konfirmasi pembayaran.
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100" id="submitPricing">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesanan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal dengan Tombol Hubungi Admin -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 class="mt-3">Pesanan Berhasil!</h4>
+                <p>Terima kasih telah memilih paket kami. Silakan hubungi admin untuk melakukan pembayaran.</p>
+                <div class="success-buttons mt-3">
+                    <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Tutup</button>
+                    <a href="#" id="whatsappPaymentBtn" class="btn btn-success" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Hubungi Admin untuk Pembayaran
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Garansi Card Section -->
     <section id="guarantee" class="guarantee">
@@ -383,26 +488,13 @@
                 </div>
             </div>
             
-            <!-- Cara Klaim Garansi -->
             <div class="guarantee-steps" data-aos="fade-up" data-aos-delay="500">
                 <h3><i class="fas fa-clipboard-list"></i> Cara Klaim Garansi</h3>
                 <div class="steps-container">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-text">Tunjukkan kartu garansi Anda</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-text">Jelaskan masalah yang dialami</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-text">Tim kami akan segera memperbaiki</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-text">Selesai! GRATIS tanpa biaya</div>
-                    </div>
+                    <div class="step"><div class="step-number">1</div><div class="step-text">Tunjukkan kartu garansi Anda</div></div>
+                    <div class="step"><div class="step-number">2</div><div class="step-text">Jelaskan masalah yang dialami</div></div>
+                    <div class="step"><div class="step-number">3</div><div class="step-text">Tim kami akan segera memperbaiki</div></div>
+                    <div class="step"><div class="step-number">4</div><div class="step-text">Selesai! GRATIS tanpa biaya</div></div>
                 </div>
                 <div class="guarantee-note">
                     <i class="fas fa-info-circle"></i>
@@ -412,88 +504,7 @@
         </div>
     </section>
 
-    <!-- Modal Klaim Promo -->
-    <div class="modal fade" id="claimModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Klaim Promo <span id="modalPromoName"></span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="claimForm">
-                        <input type="hidden" id="promoType" name="promoType">
-                        <input type="hidden" id="promoPrice" name="promoPrice">
-                        <input type="hidden" id="promoEvent" name="promoEvent">
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="fullName" required placeholder="Masukkan nama lengkap Anda">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="emailClaim" required placeholder="Masukkan email aktif Anda">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Nomor WhatsApp <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" id="phoneClaim" required placeholder="Contoh: 081234567890">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Nama Perusahaan/Bisnis/Sekolah <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="businessName" required placeholder="Nama perusahaan, bisnis, atau sekolah Anda">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Promo yang Dipilih</label>
-                            <input type="text" class="form-control" id="selectedPromo" readonly style="background: #f0f0f0;">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Harga Promo</label>
-                            <input type="text" class="form-control" id="selectedPrice" readonly style="background: #f0f0f0;">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Event Promo</label>
-                            <input type="text" class="form-control" id="selectedEvent" readonly style="background: #f0f0f0;">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Catatan (Opsional)</label>
-                            <textarea class="form-control" id="notes" rows="3" placeholder="Tambahkan catatan jika ada..."></textarea>
-                        </div>
-                        
-                        <div class="alert alert-info small">
-                            <i class="fas fa-info-circle"></i> Data Anda akan kami proses dalam 1x24 jam. Tim kami akan menghubungi Anda via WhatsApp/Email.
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary w-100" id="submitClaim">
-                            <i class="fas fa-paper-plane"></i> Kirim Klaim Promo
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-4">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h4 class="mt-3">Klaim Berhasil!</h4>
-                <p>Terima kasih telah mengklaim promo. Tim kami akan menghubungi Anda dalam 1x24 jam.</p>
-                <button class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Founder Section -->
+    <!-- Founder Section (Hidden) -->
     <section id="founder" class="founder d-none">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -509,7 +520,7 @@
                 <div class="founder-info">
                     <h2>PRAWIRA SEBASTIAN HUTAGALUNG</h2>
                     <p class="founder-title">LEADER & ADMIN WEBVIBES.ID & TECHNOLOGY INDONESIA</p>
-                    <p>WEBVIBES.ID berdiri sejak tahun 2024. Seorang leader muda yang visioner dalam menciptakan ekosistem digital berbasis teknologi dan kreativitas Indonesia. Berkomitmen untuk membangun getaran digital yang berkarakter serta memberdayakan generasi muda dan UMKM lokal.</p>
+                    <p>WEBVIBES.ID berdiri sejak tahun 2024. Seorang leader muda yang visioner dalam menciptakan ekosistem digital berbasis teknologi dan kreativitas Indonesia.</p>
                     <div class="founder-quote"><i class="fas fa-quote-left"></i> "Setiap website memiliki jiwa, tugas kami adalah menghidupkannya dengan teknologi dan kreativitas."</div>
                     <div class="founder-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-discord"></i></a></div>
                 </div>
@@ -517,7 +528,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section (Hidden) -->
     <section id="team" class="team d-none">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -548,7 +559,7 @@
         </div>
     </section>
 
-    <!-- Career Section -->
+    <!-- Career Section (Hidden) -->
     <section id="career" class="career d-none">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -620,7 +631,7 @@
                         <li><a href="#vision-mission">Visi & Misi</a></li>
                         <li><a href="#services">Layanan</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#discount">Promo</a></li>
+                        <li><a href="#pricing">Paket Harga</a></li>
                         <li><a href="#guarantee">Garansi</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
@@ -641,7 +652,7 @@
     </footer>
 
     <!-- Floating Social Buttons -->
-    <a href="https://wa.me/6287824815854" class="float-wa" target="_blank">
+    <a href="https://wa.me/6285183098588" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="tooltip">Chat WhatsApp</span>
     </a>
@@ -656,7 +667,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
